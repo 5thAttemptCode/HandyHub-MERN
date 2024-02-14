@@ -1,0 +1,18 @@
+@import url(https://db.onlinewebfonts.com/c/79174e198176f8e04958195dcee95e84?family=Orion+Esperanto+Dika);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orion Esperanto Dika";
+}
+
+body{
+  padding: 1rem
+}
+
+span{
+  background: rgb(117, 134, 248);
+  padding: 0.2rem 0.1rem;
+  border-radius: 5px;
+}
