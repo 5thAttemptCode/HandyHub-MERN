@@ -1,0 +1,36 @@
+.dropdown{
+  position: relative;
+
+  button{
+    .caret{
+      position: relative;
+      transition: all 0.2s;
+      top: 0.1rem
+    }
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    left: -1em;
+    flex-direction: column;
+    background: white;
+    margin-top: 1rem;
+    padding-block: 0.5em;
+    border-radius: 5px;
+
+    a{
+      padding: 0.5em 1em;
+      white-space: nowrap;
+      transition: all 0.2s;
+
+      &:hover{
+        background: var(--hoverColor);
+      }
+
+      p{
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+}
