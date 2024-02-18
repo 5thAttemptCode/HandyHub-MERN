@@ -1,18 +1,40 @@
-@import url(https://db.onlinewebfonts.com/c/79174e198176f8e04958195dcee95e84?family=Orion+Esperanto+Dika);
+
+:root{
+  --fontColor: #141414;
+  --hoverColor: #e3e3e3;
+  --logoColor: #7586f8;
+}
+
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Orion Esperanto Dika";
+  font-family: Poppins;
+  text-decoration: none;
 }
 
 body{
-  padding: 1rem
+  background: #324481;
 }
 
-span{
-  background: rgb(117, 134, 248);
-  padding: 0.2rem 0.1rem;
-  border-radius: 5px;
+a{
+  color: var(--fontColor);
+  font-weight: 600;
+}
+
+button{
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 500px;
+  aspect-ratio: 1;
 }
