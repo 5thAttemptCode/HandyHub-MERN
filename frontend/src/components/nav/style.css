@@ -1,4 +1,3 @@
-@import url(https://db.onlinewebfonts.com/c/79174e198176f8e04958195dcee95e84?family=Orion+Esperanto+Dika);
 
 nav{
   position: fixed;
@@ -12,12 +11,13 @@ nav{
 
   .logo{
     font-size: 25px;
-    font-family: "Orion Esperanto Dika";
+    font-family: var(--logoFont);
 
     span{
       background: var(--logoColor);
       padding: 0.1rem;
       border-radius: 5px;
+      font-family: var(--logoFont);
     }
   }
 
@@ -27,6 +27,13 @@ nav{
 
     ul{
       display: flex;
+      align-items: center;
       gap: 4rem;
+
+      .hanhub{
+        border: 1px solid black;
+        padding: 0.5em 1.5em;
+        border-radius: var(--borderRadius);
+      }
     }
 }
