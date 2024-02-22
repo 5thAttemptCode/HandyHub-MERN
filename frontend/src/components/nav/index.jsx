@@ -43,8 +43,8 @@ export default function Navbar() {
           <ExploreLink to="/mason" clickHandler={handleLinkClick} title="Mason" phrase="Secrets hidden in plain sight" />
         </DropdownMenu>
         <Link className='hanhub' to="/become-a-handyhubber">Become a HandyHubber</Link>
-        <button>Sign Up</button>
-        <Link to="/register">Join</Link>
+        <Link to="/auth">Sign Up</Link>
+        <Link to="/auth">Join</Link>
       </ul>
     </nav>
   )
