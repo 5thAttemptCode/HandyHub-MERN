@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Form from '../form'
+import axios from 'axios'
 
 
 export default function Register() {
@@ -33,6 +34,7 @@ export default function Register() {
         onSubmit={onSubmit}
         button="Register"
         idPrefix="Register"
+        showAutofill={false}
       />
     )
   }
