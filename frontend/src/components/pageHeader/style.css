@@ -1,0 +1,15 @@
+.page-header{
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--hoverColor);
+
+  h1{
+    font-size: 35px;
+    font-weight: 400;
+    margin-block: 0.7em 0.3em;
+  }
+
+  h4{
+    font-weight: 300;
+    padding-right: 35%;
+  }
+}
