@@ -8,16 +8,15 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 1.5em 5em;
+  border-bottom: 1px solid var(--hoverColor);
 
   .logo{
     font-size: 25px;
-    /* font-family: var(--logoFont); */
 
     span{
       background: var(--logoColor);
       padding: 0.1rem;
       border-radius: 5px;
-      /* font-family: var(--logoFont); */
     }
   }
 
