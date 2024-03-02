@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Electrician() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Electrician" textH4={text} />
-    </div>
+    </section>
   )
 }
 

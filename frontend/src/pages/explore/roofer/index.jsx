@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Roofer() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Roof Construction" textH4={text} />
-    </div>
+    </section>
   )
 }
 

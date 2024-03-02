@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Mason() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Mason Construction" textH4={text} />
-    </div>
+    </section>
   )
 }
 

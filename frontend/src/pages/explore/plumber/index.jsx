@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Plumber() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Plumber" textH4={text} />
-    </div>
+    </section>
   )
 }
 

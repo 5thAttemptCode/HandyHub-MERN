@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Carpenter() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Carpenter" textH4={text} />
-    </div>
+    </section>
   )
 }
 

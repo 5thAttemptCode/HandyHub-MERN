@@ -3,9 +3,9 @@ import PageHeader from '../../../components/pageHeader'
 
 export default function Painter() {
   return (
-    <div className='page'>
+    <section>
       <PageHeader textH1="Painter" textH4={text} />
-    </div>
+    </section>
   )
 }
 
