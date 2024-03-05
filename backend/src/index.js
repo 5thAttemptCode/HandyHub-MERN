@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv'  
 import mongoose from 'mongoose'
 import { userRouter } from './routes/authRoutes.js'
+import { handyHubberRouter } from './routes/handyRoutes.js'
              
 
 dotenv.config()  
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/auth", userRouter)
+app.use("/handyhubber", handyHubberRouter)
 
 mongoose.set('debug', true)
 
