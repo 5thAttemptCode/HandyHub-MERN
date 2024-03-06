@@ -1,0 +1,29 @@
+.auth{
+    height: 100vh;
+    padding-top: 20vh;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+    .auth-container{
+        height: 70vh;
+        aspect-ratio: 1.5 / 1;
+        display: flex;
+        border-radius: var(--borderRadius);
+        overflow: hidden;
+
+        .tabs, img{
+            height: 100%;
+            width: 50%;
+        }
+
+        .tabs{
+            background: var(--hoverColor);
+        }
+    }
+
+    span{
+        display: flex;
+    }
+}
