@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/auth", userRouter)
-app.use("/handyhubber", handyHubberRouter)
+app.use("/become-a-handyhubber", handyHubberRouter)
 
 mongoose.set('debug', true)
 

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const HandyHubberSchema = new mongoose.Schema({
-    username: {
+    userMail: {
         type: String, 
         required: true, 
         unique: true
@@ -9,10 +9,6 @@ const HandyHubberSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    industry: {
-        type: String,
-        required: true,
     }
 })
 
