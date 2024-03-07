@@ -1,24 +1,35 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Form from '../../../../components/form'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AuthContext } from '../../../../context/AuthContext'
+import { useCookies } from 'react-cookie'
 
 
 export default function HandyRegister() {
+
+  const [ _, setCookies ] = useCookies(["access_token"])
 
   const [ userMail, setHubberMail ] = useState("")
   const [ password, setPassword ] = useState("")
   
   const navigate = useNavigate() 
+
+  const { setHandyHubberUser } = useContext(AuthContext) 
   
   const onSubmit = async (event, receivedUserMail, receivedPassword) => {
     event.preventDefault()
+
     try{
-      await axios.post("http://localhost:3001/become-a-handyhubber/register", {
+      const result = await axios.post("http://localhost:3001/become-a-handyhubber/register", {
         userMail: receivedUserMail,
         password: receivedPassword
       })
-      navigate("/")
+      setCookies('access_token', result.data.token)
+      window.localStorage.setItem('handyHubberUser', true)
+      setHandyHubberUser(true)
+      navigate("/register-form")
+
     } catch(err){
       console.error(err)
       console.error(err.response)

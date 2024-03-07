@@ -8,7 +8,7 @@ import { AuthContext } from '../../../../context/AuthContext'
 
 export default function HandyLogin() {
 
-  const [_, setCookies] = useCookies(["access_token"])
+  const [ _, setCookies ] = useCookies(["access_token"])
   
   const [ userMail, setHubberMail ] = useState("")
   const [ password, setPassword ] = useState("")
@@ -26,9 +26,10 @@ export default function HandyLogin() {
         password,
       })
       setCookies("access_token", result.data.token)
-      window.localStorage.setItem("handyHubberID", result.data.handyHubberID)
-      setHandyHubberUser(result.data.handyHubberID)
+      window.localStorage.setItem("handyHubberUser", true)
+      setHandyHubberUser(true)
       navigate("/handy-hubber-profile")
+      
     } catch (error) {
       console.error(error)
     }
