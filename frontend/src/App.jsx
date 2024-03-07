@@ -13,6 +13,7 @@ import UserAuth from './pages/userAuth'
 import { AuthContext, AuthProvider } from './context/AuthContext'
 import UserProfile from './pages/userProfile'
 import HandyHubberProfile from './pages/handyHubberProfile'
+import HandyHubberRegister from './pages/handyHubberRegForm'
 
 
 export default function App() {
@@ -27,7 +28,8 @@ export default function App() {
           <Route path="/become-a-handyhubber" element={<HandyHubber />} />
 
           <Route path="/user-profile" element={<ProfileRoute />} />
-          <Route path="/handy-hubber-profile" element={<HandyHubberRoute />} />
+          <Route path="/handy-hubber-profile" element={<HandyHubberProfileRoute />} />
+          <Route path="/register-form" element={<HandyHubberRegisterRoute />} />
 
           <Route path="/mason" element={<Mason />} />
           <Route path="/electrician" element={<Electrician />} />
@@ -46,7 +48,12 @@ const ProfileRoute = () => {
   return user ? <UserProfile /> : <Navigate to="/auth" />
 }
 
-const HandyHubberRoute = () => {
+const HandyHubberProfileRoute = () => {
   const { handyHubberUser } = useContext(AuthContext)
   return handyHubberUser ? <HandyHubberProfile /> : <Navigate to="/become-a-handyhubber" />
+}
+
+const HandyHubberRegisterRoute = () => {
+  const { handyHubberUser } = useContext(AuthContext)
+  return handyHubberUser ? <HandyHubberRegister /> : <Navigate to="/become-a-handyhubber" />
 }
