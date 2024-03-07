@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useCookies } from "react-cookie"
 import { useNavigate } from "react-router-dom"
 import Form from "../../../../components/form"
 import axios from 'axios'
+import { AuthContext } from "../../../../context/AuthContext"
 
 
 export default function UserLogin() {
@@ -13,6 +14,8 @@ export default function UserLogin() {
     const [ password, setPassword ] = useState("")
   
     const navigate = useNavigate()
+
+    const { setUser } = useContext(AuthContext)
   
     const handleSubmit = async (event, userMail, password) => {
       event.preventDefault()
@@ -24,7 +27,8 @@ export default function UserLogin() {
         })
         setCookies("access_token", result.data.token)
         window.localStorage.setItem("userID", result.data.userID)
-        navigate("/")
+        setUser(result.data.userID)
+        navigate("/user-profile")
       } catch (error) {
         console.error(error)
       }
