@@ -1,8 +1,9 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 import Form from '../../../../components/form'
+import { AuthContext } from '../../../../context/AuthContext'
 
 
 export default function HandyLogin() {
@@ -14,6 +15,8 @@ export default function HandyLogin() {
 
   const navigate = useNavigate()
 
+  const { setHandyHubberUser } = useContext(AuthContext)
+
   const handleSubmit = async (event, userMail, password) => {
     event.preventDefault()
 
@@ -23,8 +26,9 @@ export default function HandyLogin() {
         password,
       })
       setCookies("access_token", result.data.token)
-      window.localStorage.setItem("userID", result.data.userID)
-      navigate("/")
+      window.localStorage.setItem("handyHubberID", result.data.handyHubberID)
+      setHandyHubberUser(result.data.handyHubberID)
+      navigate("/handy-hubber-profile")
     } catch (error) {
       console.error(error)
     }
