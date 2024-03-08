@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './style.css'
 import { CaretDown } from '@phosphor-icons/react'
-import ExploreLink from '../nav/navComponents/exploreLink'
 
 
 export default function DropdownMenu(props) {
 
-  const {buttonContent, children, menuVisible, setMenuVisible, handleLinkClick} = props
+  const { buttonContent, children } = props
   
   const dropdownRef = useRef(null)
+  const [ menuVisible, setMenuVisible ] = useState(false)
 
   const handleClickOutside = event => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -22,16 +22,22 @@ export default function DropdownMenu(props) {
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [])
+
+  const handleSelection = (event) => {
+    setMenuVisible(false)
+  }
     
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button onClick={() => setMenuVisible(!menuVisible)}>
         {buttonContent}
-        <CaretDown className='caret' style={{ rotate: menuVisible? '180deg' : ''}} />
+        <CaretDown className='caret' style={{ rotate: menuVisible ? '180deg' : ''}} />
       </button>
-      <div className="dropdown-menu" style={{ display: menuVisible? 'flex' : 'none'}}>
-        {children}
-      </div>
+        <div className="dropdown-menu" onClick={handleSelection} style={{ display: menuVisible ? 'flex' : 'none'}}>
+          {children}
+        </div>
     </div>
   )
 }
+
+
