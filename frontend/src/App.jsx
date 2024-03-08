@@ -24,10 +24,10 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<UserAuth />} />
-          <Route path="/become-a-handyhubber" element={<HandyHubber />} />
+          <Route path="/auth" element={<UserLoginRoute />} />
+          <Route path="/become-a-handyhubber" element={<HandyHubberLoginRoute />} />
 
-          <Route path="/user-profile" element={<ProfileRoute />} />
+          <Route path="/user-profile" element={<UserProfileRoute />} />
           <Route path="/handy-hubber-profile" element={<HandyHubberProfileRoute />} />
           <Route path="/register-form" element={<HandyHubberRegisterRoute />} />
 
@@ -43,11 +43,20 @@ export default function App() {
   )
 }
 
-const ProfileRoute = () => {
+
+//User
+const UserProfileRoute = () => {
   const { user } = useContext(AuthContext)
   return user ? <UserProfile /> : <Navigate to="/auth" />
 }
 
+const UserLoginRoute = () => {
+  const { user } = useContext(AuthContext)
+  return !user ? <UserAuth /> : <Navigate to="/user-profile" />
+}
+
+
+//HandyHubber
 const HandyHubberProfileRoute = () => {
   const { handyHubberUser } = useContext(AuthContext)
   return handyHubberUser ? <HandyHubberProfile /> : <Navigate to="/become-a-handyhubber" />
@@ -56,4 +65,9 @@ const HandyHubberProfileRoute = () => {
 const HandyHubberRegisterRoute = () => {
   const { handyHubberUser } = useContext(AuthContext)
   return handyHubberUser ? <HandyHubberRegister /> : <Navigate to="/become-a-handyhubber" />
+}
+
+const HandyHubberLoginRoute = () => {
+  const { handyHubberUser } = useContext(AuthContext)
+  return !handyHubberUser ? <HandyHubber /> : <Navigate to="/handy-hubber-profile" />
 }
