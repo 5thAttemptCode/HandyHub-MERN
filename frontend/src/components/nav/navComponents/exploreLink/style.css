@@ -5,10 +5,12 @@
 
   &:hover{
     background: var(--hoverColor);
+    
   }
 
   > p{
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 300;
+    opacity: 0.8;
   }
 }
