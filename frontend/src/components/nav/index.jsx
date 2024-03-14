@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext } from 'react'
 import './style.css'
 import { Link } from 'react-router-dom'
 import DropdownMenu from '../dropdownMenu'
-import ExploreLink from './navComponents/exploreLink'
+import ExploreLink from './components/exploreLink'
 import { AuthContext } from '../../context/AuthContext'
 
 
