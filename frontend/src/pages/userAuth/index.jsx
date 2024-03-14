@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import './style.css'
 import { AuthContext } from '../../context/AuthContext'
 import TabsAuth from '../../components/tabsAuth';
-import UserLogin from './userAuthComponents/login';
-import UserRegister from './userAuthComponents/register';
+import UserLogin from './components/login';
+import UserRegister from './components/register';
 
 
 export default function UserAuth() {
@@ -11,7 +11,7 @@ export default function UserAuth() {
   const { activeTab, setActiveTab } = useContext(AuthContext)
   
   return (
-    <div className='auth'>
+    <section className='auth'>
       <div className='auth-container'>
         <img src="https://images.pexels.com/photos/5691637/pexels-photo-5691637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
         <TabsAuth
@@ -21,7 +21,7 @@ export default function UserAuth() {
           TabComponentTwo={ UserRegister }
         />
       </div>
-    </div>
+    </section>
   )
 }
 
