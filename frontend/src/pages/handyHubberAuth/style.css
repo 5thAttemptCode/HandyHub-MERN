@@ -1,0 +1,17 @@
+.handy-auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .handy-auth-container{
+        height: 70vh;
+        aspect-ratio: 0.75 / 1;
+        background: var(--hoverColor);
+        border-radius: var(--borderRadius);
+    }
+
+    span{
+        display: flex;
+        margin-left: 2rem;
+    }
+}
