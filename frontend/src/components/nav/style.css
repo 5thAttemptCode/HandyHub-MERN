@@ -9,6 +9,7 @@ nav{
   align-items: center;
   padding: 1.5em 5em;
   border-bottom: 1px solid var(--hoverColor);
+  background: var(--background);
 
   .logo{
     font-size: 25px;
