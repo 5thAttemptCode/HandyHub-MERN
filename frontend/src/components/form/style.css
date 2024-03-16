@@ -4,13 +4,35 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 30px;
+    gap: 1rem;
+    padding: 2rem;
+
+    > h2{
+      font-weight: 400;
+    }
 
     .form-group{
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      width: 100%;
+
+      > a{
+        font-size: 12px;
+        font-weight: 300;
+      }
+
+      > input{
+        width: 100%;
+      }
+    }
+
+    > button{
+      width: 100%;
+      padding-block: 0.5em;
+      background: var(--buttonBackground);
+      margin-top: 2rem;
     }
   }
 }
