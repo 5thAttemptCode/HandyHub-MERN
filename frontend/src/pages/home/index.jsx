@@ -1,9 +1,25 @@
 import React from 'react'
+import './style.css'
+import IconLinks from './components/iconLinks'
+import { IndustryData } from '@/components/data'
+import { Link } from 'react-router-dom'
+
 
 export default function Home() {
   return (
-    <div>
-      Handy<span>Hub</span>
-    </div>
+    <>
+    <section className='home'>
+      <div className='header-container'>
+        <h1>Find the right <span>experts</span> for your home-build</h1>
+        <div className="quick-links">
+          Popular:
+          {IndustryData.slice(0, 4).map(item => (
+            <Link key={item.industryName} to={`/${item.url}`}>{item.industryName}</Link>
+          ))}
+        </div>
+      </div>
+    </section>
+    <IconLinks />
+    </>
   )
 }
