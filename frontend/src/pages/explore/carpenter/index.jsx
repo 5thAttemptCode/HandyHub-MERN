@@ -1,12 +1,15 @@
 import React from 'react'
-import PageHeader from '../../../components/pageHeader'
+import PageHeader from '@/components/pageHeader'
+import { IndustryData } from '@/components/data'
+
 
 export default function Carpenter() {
+
+  const { industryName, mainText } = IndustryData.find(item => item.industryName === "Carpenter")
+
   return (
     <section>
-      <PageHeader textH1="Carpenter" textH4={text} />
+      <PageHeader textH1={industryName} textH4={mainText} />
     </section>
   )
 }
-
-const text = "Carpentry is one of the oldest construction trades and is in high demand. Carpenters use natural materials (wood/timber) to install wooden fixtures and fittings. As a carpenter you could be installing doors, floors and furniture in new builds, renovating or refitting existing structures, building sets for film and theatre companies and much more."

@@ -1,12 +1,15 @@
 import React from 'react'
-import PageHeader from '../../../components/pageHeader'
+import PageHeader from '@/components/pageHeader'
+import { IndustryData } from '@/components/data'
+
 
 export default function Electrician() {
+
+  const { industryName, mainText } = IndustryData.find(item => item.industryName === "Electrician")
+
   return (
     <section>
-      <PageHeader textH1="Electrician" textH4={text} />
+      <PageHeader textH1={industryName} textH4={mainText} />
     </section>
   )
 }
-
-const text = "An electrician is a tradesperson specializing in electrical wiring of buildings, transmission lines, stationary machines, and related equipment. Electricians may be employed in the installation of new electrical components or the maintenance and repair of existing electrical infrastructure."

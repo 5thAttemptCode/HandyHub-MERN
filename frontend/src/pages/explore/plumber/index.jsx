@@ -1,12 +1,15 @@
 import React from 'react'
-import PageHeader from '../../../components/pageHeader'
+import PageHeader from '@/components/pageHeader'
+import { IndustryData } from '@/components/data'
+
 
 export default function Plumber() {
+
+  const { industryName, mainText } = IndustryData.find(item => item.industryName === "Plumber")
+
   return (
     <section>
-      <PageHeader textH1="Plumber" textH4={text} />
+      <PageHeader textH1={industryName} textH4={mainText} />
     </section>
   )
 }
-
-const text = "What is a plumber? A plumber is a construction professional who works on pipes and systems that carry water and waste throughout buildings. Common duties of a plumber include: Installing pipes into new building and ensuring they work properly"

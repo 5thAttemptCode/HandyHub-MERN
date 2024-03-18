@@ -1,12 +1,15 @@
 import React from 'react'
-import PageHeader from '../../../components/pageHeader'
+import PageHeader from '@/components/pageHeader'
+import { IndustryData } from '@/components/data'
+
 
 export default function Mason() {
+
+  const { industryName, mainText } = IndustryData.find(item => item.industryName === "Mason")
+
   return (
     <section>
-      <PageHeader textH1="Mason Construction" textH4={text} />
+      <PageHeader textH1={industryName} textH4={mainText} />
     </section>
   )
 }
-
-const text = "Masonry consists of building structures from single units that are laid and bound together with mortar. Brick, stone and concrete blocks are the most common materials used in masonry construction. Masonry is a popular construction technique around the world, due to its many advantages."
