@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Form from '../../../../components/form'
 import axios from 'axios'
+import Form from '@/components/form'
+import { useNavigate } from 'react-router-dom'
+import { ToastError, ToastSuccess } from "@/components/toastMessage"
 
 
 export default function UserRegister() {
@@ -18,9 +19,11 @@ export default function UserRegister() {
           password: receivedPassword
         })
         navigate("/")
+        ToastSuccess({ message: "Registration successful!" })
       } catch(error){
         console.error(error)
         console.error(error.response)
+        ToastError({ message: "Something went wrong.\nTry again later" })
       }
     }
   

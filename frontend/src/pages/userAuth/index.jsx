@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './style.css'
-import { AuthContext } from '../../context/AuthContext'
-import TabsAuth from '../../components/tabsAuth';
-import UserLogin from './components/login';
-import UserRegister from './components/register';
+import TabsAuth from '@/components/tabsAuth'
+import UserLogin from './components/login'
+import UserRegister from './components/register'
+import { useAuthStore } from '@/context/AuthContext'
 
 
 export default function UserAuth() {
 
-  const { activeTab, setActiveTab } = useContext(AuthContext)
+  const { activeTab, setActiveTab } = useAuthStore()
   
   return (
     <section className='auth'>

@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
+import axios from 'axios'
+import Form from "@/components/form"
 import { useCookies } from "react-cookie"
 import { useNavigate } from "react-router-dom"
-import Form from "../../../../components/form"
-import axios from 'axios'
-import { AuthContext } from "../../../../context/AuthContext"
+import { useAuthStore } from "@/context/AuthContext"
+import { ToastSuccess } from "@/components/toastMessage"
 
 
 export default function UserLogin() {
@@ -15,7 +16,7 @@ export default function UserLogin() {
   
     const navigate = useNavigate()
 
-    const { setUser } = useContext(AuthContext)
+    const { setUser } = useAuthStore()
   
     const handleSubmit = async (event, userMail, password) => {
       event.preventDefault()
@@ -29,8 +30,10 @@ export default function UserLogin() {
         window.localStorage.setItem("userID", result.data.userID)
         setUser(result.data.userID)
         navigate("/user-profile")
+        ToastSuccess({ message: "Login successful!" })
       } catch (error) {
         console.error(error)
+        ToastError({ message: "Ups! Something went wrong." })
       }
     }
   
