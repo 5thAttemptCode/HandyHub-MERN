@@ -1,9 +1,10 @@
+import React, { useState } from 'react'
 import axios from 'axios'
-import React, { useContext, useState } from 'react'
+import Form from '@/components/form'
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
-import Form from '../../../../components/form'
-import { AuthContext } from '../../../../context/AuthContext'
+import { useAuthStore } from '@/context/AuthContext'
+import { ToastError, ToastSuccess } from '@/components/toastMessage'
 
 
 export default function HandyLogin() {
@@ -15,7 +16,7 @@ export default function HandyLogin() {
 
   const navigate = useNavigate()
 
-  const { setHandyHubberUser } = useContext(AuthContext)
+  const { setHandyHubberUser } = useAuthStore()
 
   const handleSubmit = async (event, userMail, password) => {
     event.preventDefault()
@@ -29,9 +30,10 @@ export default function HandyLogin() {
       window.localStorage.setItem("handyHubberUser", true)
       setHandyHubberUser(true)
       navigate("/handy-hubber-profile")
-      
+      ToastSuccess({ message: "Happy HandyHubbing!" })
     } catch (error) {
       console.error(error)
+      ToastError({ message: "Whoopsy, something went wrong."})
     }
   }
 

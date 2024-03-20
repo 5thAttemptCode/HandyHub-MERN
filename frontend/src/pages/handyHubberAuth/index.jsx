@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './style.css'
-import TabsAuth from '../../components/tabsAuth'
-import { AuthContext } from '../../context/AuthContext'
 import HandyLogin from './components/login'
 import HandyRegister from './components/register'
+import TabsAuth from '@/components/tabsAuth'
+import { useAuthStore } from '@/context/AuthContext'
 
 
 export default function HandyHubber() {
 
-  const { activeTab, setActiveTab } = useContext(AuthContext)
+  const { activeTab, setActiveTab } = useAuthStore()
 
   return (
     <section className='handy-auth'>

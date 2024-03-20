@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react'
-import Form from '../../../../components/form'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { AuthContext } from '../../../../context/AuthContext'
+import Form from '@/components/form'
 import { useCookies } from 'react-cookie'
+import { useNavigate } from 'react-router-dom'
+import { useAuthStore } from '@/context/AuthContext'
+import { ToastError, ToastSuccess } from "@/components/toastMessage"
 
 
 export default function HandyRegister() {
@@ -15,7 +16,7 @@ export default function HandyRegister() {
   
   const navigate = useNavigate() 
 
-  const { setHandyHubberUser } = useContext(AuthContext) 
+  const { setHandyHubberUser } = useAuthStore()
   
   const onSubmit = async (event, receivedUserMail, receivedPassword) => {
     event.preventDefault()
@@ -29,10 +30,11 @@ export default function HandyRegister() {
       window.localStorage.setItem('handyHubberUser', true)
       setHandyHubberUser(true)
       navigate("/register-form")
-
+      ToastSuccess({ message: "Business registrated successful!" })
     } catch(err){
       console.error(err)
       console.error(err.response)
+      ToastError({ message: "Whoopsy, try again in a few!" })
     }
   }
 
