@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './style.css'
-import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { useAuthStore } from '@/context/AuthContext'
 
 
 export default function UserProfile() {
 
-  const { setUser } = useContext(AuthContext)
+  const { setUser } = useAuthStore()
 
   const navigate = useNavigate()
 
