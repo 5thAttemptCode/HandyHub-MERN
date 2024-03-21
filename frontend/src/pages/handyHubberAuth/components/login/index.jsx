@@ -39,7 +39,7 @@ export default function HandyLogin() {
 
   return (
     <Form
-      title="Sign-in and HandyHub"
+      title="Sign-in to your account"
       username={userMail}
       setUserMail={setHubberMail}
       password={password}

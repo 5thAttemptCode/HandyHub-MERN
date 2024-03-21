@@ -26,6 +26,7 @@ export default function HandyRegister() {
         userMail: receivedUserMail,
         password: receivedPassword
       })
+      
       setCookies('access_token', result.data.token)
       window.localStorage.setItem('handyHubberUser', true)
       setHandyHubberUser(true)
