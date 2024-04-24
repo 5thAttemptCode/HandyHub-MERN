@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import DropdownMenu from '../dropdownMenu'
 import ExploreLink from './components/exploreLink'
 import { useAuthStore } from '@/context/AuthContext'
+import { Hamburger } from '@phosphor-icons/react'
+import ResponsiveMenu from './components/responsiveMenu'
 
 
 export default function Navbar() {
@@ -28,9 +30,10 @@ export default function Navbar() {
             /> 
           )}
         </DropdownMenu>
-        <Link className='hanhub' to="/become-a-handyhubber">Become a HandyHubber</Link>
+        <Link className='hanhub' to="/become-a-handyhubber">HandyHubber</Link>
         <Link to="/auth" onClick={() => setActiveTab(1)}>Login</Link>
         <Link to="/auth" onClick={() => setActiveTab(2)}>Sign Up</Link>
+        <ResponsiveMenu />
       </ul>
     </nav>
   )
