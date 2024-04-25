@@ -2,17 +2,18 @@ import React from 'react'
 import './style.css'
 import SubHeader from '@/components/subHeader'
 import { IndustryData } from '@/components/data' 
-import { Link } from 'react-router-dom'
+import IconLink from './components/iconLink'
+import GridContainer from '../../../../components/gridContainer'
 
 
 export default function IconLinks() {
 
   return (
-    <div className='icon-links'>
+    <GridContainer>
       <SubHeader text="You need it, we've got it" />
       <div className="icon-links-container">
       {IndustryData.map(item => 
-        <IconLink 
+        <IconLink
           key={item.industryName}
           to={`/${item.url}`} 
           icon={item.icon}
@@ -20,15 +21,6 @@ export default function IconLinks() {
         /> 
       )}
       </div>
-    </div>
-  )
-}
-
-const IconLink = ({ to, icon, page}) => {
-  return(
-    <Link className='icon-link' to={to}>
-      {icon}
-      <h4>{page}</h4>
-    </Link>
+    </GridContainer>
   )
 }

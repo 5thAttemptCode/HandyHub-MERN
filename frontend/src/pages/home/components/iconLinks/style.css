@@ -1,29 +1,5 @@
-.icon-links{
-    padding-block: 5vw;
-    background: hsl(221, 39%, 17%);
-    padding-inline: 5em;
-
-    .icon-links-container{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 5rem;
-
-        .icon-link{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.2s;
-    
-            &:hover{
-                scale: 1.2;
-            }
-    
-            h4{
-                margin-top: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--fontColor);
-                font-weight: 400;
-            }
-        }
-    }
+.icon-links-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
 }
