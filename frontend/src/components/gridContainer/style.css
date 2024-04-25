@@ -1,0 +1,5 @@
+.grid-container{
+    padding-block: 5vw;
+    background: hsl(221, 39%, 17%);
+    padding-inline: 5em;
+}
