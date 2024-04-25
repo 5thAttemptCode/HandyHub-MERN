@@ -1,16 +1,39 @@
-.resmenu{
+.responsive-menu-wrapper{
+    display: none;
 
     > .dropdown{
 
         > .dropdown-menu{
             right: 0;
             left: auto;
+            width: 200px;
         }
     }
-    .responsive-menu{
+    
+    .responsive-menu-container{
 
         > ul{
             display: grid;
+
+            > a, p{
+                padding: 0.5em 1em;
+            }
+
+            > a:nth-child(3){
+                padding-bottom: 1em;
+            }
+
+            p{
+                border-top: 2px solid var(--borderColor);
+                font-style: italic;
+                padding-top: 1em;
+            }
         }
+    }
+}
+
+@media(max-width: 768px){
+    .responsive-menu-wrapper{
+        display: block;
     }
 }
