@@ -3,6 +3,7 @@ import './style.css'
 import IconLinks from './components/iconLinks'
 import { IndustryData } from '@/components/data'
 import { Link } from 'react-router-dom'
+import BestPart from './components/bestPart'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
     </section>
     <IconLinks />
+    <BestPart />
     </>
   )
 }
