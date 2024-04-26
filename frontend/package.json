@@ -15,6 +15,7 @@
     "@mui/material": "^5.15.10",
     "@phosphor-icons/react": "^2.0.15",
     "axios": "^1.6.7",
+    "embla-carousel-react": "^8.0.2",
     "react": "^18.2.0",
     "react-cookie": "^7.0.2",
     "react-dom": "^18.2.0",
