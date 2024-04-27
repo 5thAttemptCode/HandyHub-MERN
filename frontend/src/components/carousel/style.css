@@ -1,90 +1,81 @@
 .embla {
-    height: 50vh;
-    padding-inline: 5em;
+  position: relative;
+  height: 50vh;
 
-    .embla__viewport{
+  .embla__viewport{
+    height: 100%;
+    overflow: hidden;
+
+    .embla__container{
+      display: flex;
+      height: 100%;
+      width: 100%;
+
+      .embla__slide{
+        position: relative;
         height: 100%;
-        overflow: hidden;
+        flex: 0 0 300px;
+        min-width: 0;
+        margin-left: 3rem;
 
-        .embla__container{
-            display: flex;
-            height: 100%;
-            width: 100%;
+        > img{
+          position: absolute;
+          top: 0;
+          z-index: -1;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          filter: brightness(87%);
+          border-radius: var(--borderRadius);
 
-            .embla__slide{
-                position: relative;
-                height: 100%;
-                flex: 0 0 300px;
-                min-width: 0;
-                margin-left: 3rem;
-
-                .embla__slide__number{
-                    position: absolute;
-                    top: 0
-                }
-
-                > img{
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    filter: brightness(87%);
-                    border-radius: var(--borderRadius);
-
-                    &:hover{
-                        filter: brightness(100%)
-                    }
-                }
-            }
+          &:hover{
+            filter: brightness(100%)
+          }
         }
+
+        > a{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 20;
+          background: rgb(0, 0, 0, 0.15);
+          transition: all 0.2s;
+
+          &:hover{
+            background: transparent;
+          }
+        }
+      }
     }
-}
-
-
-  .embla__controls {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    gap: 1.2rem;
-    margin-top: 1.8rem;
-  }
-
-  .embla__buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    align-items: center;
   }
 
   .embla__button {
-    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
     touch-action: manipulation;
-    display: inline-flex;
-    text-decoration: none;
     cursor: pointer;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
     width: 3.6rem;
-    height: 3.6rem;
-    z-index: 1;
+    aspect-ratio: 1;
     border-radius: 50%;
-    color: var(--text-body);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .embla__button:disabled {
-    color: var(--detail-high-contrast);
+  .embla__button--next{
+    right: -2em;
+  }
+  .embla__button--prev{
+    left: -2em;
   }
 
   .embla__button__svg {
     width: 35%;
     height: 35%;
   }
-
-  
+}
