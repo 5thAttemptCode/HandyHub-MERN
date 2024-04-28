@@ -1,0 +1,30 @@
+.help{
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    align-content: center;
+    padding-inline-start: 5em;
+    background: #313b61;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    
+    > h1{
+        font-weight: 700;
+        margin-bottom: 3rem;
+        line-height: 1.2;
+    }
+
+    > a{
+        background: var(--buttonGreen);
+        padding: 1rem 2rem;
+        border-radius: var(--borderRadius);
+    }
+
+    > img{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        scale: 1.2;
+    }
+}
