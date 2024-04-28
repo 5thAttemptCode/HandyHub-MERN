@@ -9,8 +9,8 @@ import GridContainer from '../../../../components/gridContainer'
 export default function IconLinks() {
 
   return (
-    <GridContainer backgroundColor="hsl(221, 42%, 25%)">
-      <SubHeader text="You need it, we've got it" />
+    <GridContainer backgroundColor="var(--gridContainerOne)">
+      <SubHeader marginBottom="5rem" text="You need it, we've got it" />
       <div className="icon-links-container">
       {IndustryData.map(item => 
         <IconLink
