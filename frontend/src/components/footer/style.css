@@ -1,0 +1,20 @@
+footer{
+    padding-inline: 5em;
+    
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+
+        .footer-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding-block: 2em;
+
+            > p{
+                font-size: 12px;
+            }
+        }
+    }
+}
