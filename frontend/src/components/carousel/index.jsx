@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import SubHeader from '../subHeader'
 
 
-const EmblaCarousel = ({ Slider, ElementOne, ElementTwo, ElementThree, LinkTo = false, ...props}) => {
+const EmblaCarousel = ({ Slider, ElementOne, ElementTwo, ElementThree, ElementFour, LinkTo = false, SubText = false, ...props}) => {
     
   const options = {
     ...props,
@@ -27,6 +27,7 @@ const EmblaCarousel = ({ Slider, ElementOne, ElementTwo, ElementThree, LinkTo = 
         <div className="embla__container">
           {Slider.map((item, index) => (
             <div className="embla__slide" key={`slide-${index}`}>
+              {SubText && <p>{ElementFour[index]} </p>} 
               <SubHeader text={ElementOne[index]} />
               <img src={ElementTwo[index]} alt="" />
               {LinkTo && <Link to={ElementThree[index]} />}
