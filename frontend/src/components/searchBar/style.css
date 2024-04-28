@@ -1,0 +1,50 @@
+.searchbar{
+    position: relative;
+    margin-block: 1rem;
+    
+    > form{
+        --height: auto;
+        border-radius: var(--borderRadius);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1dbf73;
+
+        > input{
+            width: 500px;
+            border: none;
+            outline: none;
+            padding-inline: 0.6rem;
+            border: 1px solid var(--fontColor);
+        }
+
+        > button{
+            padding-inline: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    > ul{
+        width: 100%;
+        position: absolute;
+        top: var(--height);
+        margin-top: 5px;
+        background: white;
+        border-radius: var(--borderRadius);
+        border: 1px solid var(--fontColor);
+        padding: 0.3rem 0.6rem;
+
+        
+        li{
+            color: black;
+
+            &:hover{
+                background: rgb(237, 235, 235);
+                cursor: pointer;
+            }
+        }
+    }
+}
