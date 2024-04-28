@@ -12,10 +12,10 @@ export default function BestPart() {
   return (
     <FlexContainer>
       <FlexContainerBox>
-        <SubHeader text="The best part? Everything." />
-        <ul>
-        {bestPartData.map(item => (
-            <li>
+        <SubHeader marginBottom="2rem" text="The best part? Everything." />
+        <ul className='best-part-ul'>
+          {bestPartData.map(item => (
+            <li key={item.id}>
               <SubHeaderSmall 
                 icon={<CheckCircle size={27} />} 
                 text={item.title} 
