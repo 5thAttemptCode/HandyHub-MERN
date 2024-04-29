@@ -1,27 +1,33 @@
 import React, { useContext } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/home'
-import Navbar from './components/nav'
-import Mason from './pages/explore/mason'
-import Electrician from './pages/explore/electrician'
-import Painter from './pages/explore/painter'
 import Carpenter from './pages/explore/carpenter'
-import Roofer from './pages/explore/roofer'
-import Plumber from './pages/explore/plumber'
+import Electrician from './pages/explore/electrician'
 import HandyHubber from './pages/handyHubberAuth'
-import UserAuth from './pages/userAuth'
-import { AuthContext, AuthProvider } from './context/AuthContext'
-import UserProfile from './pages/userProfile'
 import HandyHubberProfile from './pages/handyHubberProfile'
 import HandyHubberRegister from './pages/handyHubberRegForm'
+import Home from './pages/home'
+import Mason from './pages/explore/mason'
+import Navbar from './components/nav'
+import Painter from './pages/explore/painter'
+import Plumber from './pages/explore/plumber'
+import Roofer from './pages/explore/roofer'
+import UserAuth from './pages/userAuth'
+import UserProfile from './pages/userProfile'
+import { useAuthStore } from './context/AuthContext'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import Footer from './components/footer'
+import LinkOne from './pages/guideForYou/linkOne'
+import LinkTwo from './pages/guideForYou/linkTwo'
+import LinkThree from './pages/guideForYou/linkThree'
+
 
 
 export default function App() {
 
   return (
-    <AuthProvider>
       <Router>
         <Navbar />
+        <Toaster position="top-right" toastOption={{duration: 1000}} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<UserLoginRoute />} />
@@ -37,37 +43,41 @@ export default function App() {
           <Route path="/carpenter" element={<Carpenter />} />
           <Route path="/roofer" element={<Roofer />} />
           <Route path="/plumber" element={<Plumber />} />
+
+          <Route path="/guide-foryour-home-project-linkOne" element={<LinkOne />} />
+          <Route path="/guide-foryour-home-project-linkTwo" element={<LinkTwo />} />
+          <Route path="/guide-foryour-home-project-linkThree" element={<LinkThree />} />
         </Routes>
+        <Footer />
       </Router>
-    </AuthProvider>
   )
 }
 
 
 //User
 const UserProfileRoute = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useAuthStore()
   return user ? <UserProfile /> : <Navigate to="/auth" />
 }
 
 const UserLoginRoute = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useAuthStore()
   return !user ? <UserAuth /> : <Navigate to="/user-profile" />
 }
 
 
 //HandyHubber
 const HandyHubberProfileRoute = () => {
-  const { handyHubberUser } = useContext(AuthContext)
+  const { handyHubberUser } = useAuthStore()
   return handyHubberUser ? <HandyHubberProfile /> : <Navigate to="/become-a-handyhubber" />
 }
 
 const HandyHubberRegisterRoute = () => {
-  const { handyHubberUser } = useContext(AuthContext)
+  const { handyHubberUser } = useAuthStore()
   return handyHubberUser ? <HandyHubberRegister /> : <Navigate to="/become-a-handyhubber" />
 }
 
 const HandyHubberLoginRoute = () => {
-  const { handyHubberUser } = useContext(AuthContext)
+  const { handyHubberUser } = useAuthStore()
   return !handyHubberUser ? <HandyHubber /> : <Navigate to="/handy-hubber-profile" />
 }
