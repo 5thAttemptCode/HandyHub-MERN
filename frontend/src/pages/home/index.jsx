@@ -7,6 +7,7 @@ import BestPart from './components/bestPart'
 import LinkCarousel from './components/linkCarousel'
 import SearchBar from '../../components/searchBar'
 import JoinHandyHub from './components/joinHandyHub'
+import GuideForYou from './components/guideForYouLinks'
 
 
 export default function Home() {
@@ -24,9 +25,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <IconLinks />
-      <BestPart />
       <LinkCarousel />
+      <BestPart />
+      <IconLinks />
+      <GuideForYou />
       <JoinHandyHub />
     </>
   )
