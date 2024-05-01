@@ -19,6 +19,7 @@ import Footer from './components/footer'
 import LinkOne from './pages/guideForYou/linkOne'
 import LinkTwo from './pages/guideForYou/linkTwo'
 import LinkThree from './pages/guideForYou/linkThree'
+import ScrollToTop from './utliz/scrollToTop'
 
 
 
@@ -27,6 +28,7 @@ export default function App() {
   return (
       <Router>
         <Navbar />
+        <ScrollToTop />
         <Toaster position="top-right" toastOption={{duration: 1000}} />
         <Routes>
           <Route path="/" element={<Home />} />
