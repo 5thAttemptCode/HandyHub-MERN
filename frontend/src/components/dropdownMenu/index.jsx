@@ -5,10 +5,10 @@ import { CaretDown } from '@phosphor-icons/react'
 
 export default function DropdownMenu(props) {
 
-  const { buttonContent, children } = props
+  const { buttonContent, children, menuVisible: propMenuVisible = false } = props
   
   const dropdownRef = useRef(null)
-  const [ menuVisible, setMenuVisible ] = useState(false)
+  const [ menuVisible, setMenuVisible ] = useState(propMenuVisible)
 
   const handleClickOutside = event => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -29,7 +29,7 @@ export default function DropdownMenu(props) {
     
   return (
     <div className="dropdown" ref={dropdownRef}>
-      <button onClick={() => setMenuVisible(!menuVisible)}>
+      <button onClick={() => setMenuVisible(prevMenuVisible => !prevMenuVisible)}>
         {buttonContent}
         <CaretDown className='caret' style={{ rotate: menuVisible ? '180deg' : ''}} />
       </button>
