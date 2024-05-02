@@ -2,6 +2,8 @@ import React from 'react'
 import './style.css'
 import Logo from '../logo'
 import { InstagramLogo, LinkedinLogo, MetaLogo, PinterestLogo, TiktokLogo, TwitterLogo } from '@phosphor-icons/react'
+import FooterUL from './footerUL'
+import { IndustryData } from '../data'
 
 
 export default function Footer() {
@@ -10,7 +12,9 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="footer-container"></div>
+      <div className="footer-container">
+      <FooterUL text="Categories" dataArray={IndustryData} propName="industryName" url="url" />
+      </div>
       <div className="footer-container">
         <div className="footer-box">
           <Logo />
