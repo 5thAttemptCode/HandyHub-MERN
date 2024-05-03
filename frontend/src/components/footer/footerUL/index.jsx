@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import './style.css'
 import { Link } from 'react-router-dom'
 
 
 export default function FooterUL({ text, dataArray, propName, url }) {
 
-    const [ ulVisible, setUlVisible ] = useState(window.innerWidth > 450)
-    const [ isMobile, setIsMobile ] = useState(window.innerWidth <= 450)
+    const [ ulVisible, setUlVisible ] = useState(window.innerWidth > 600)
+    const [ isMobile, setIsMobile ] = useState(window.innerWidth <= 600)
   
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 450)
-      if (window.innerWidth > 450) {
+      setIsMobile(window.innerWidth <= 600)
+      if (window.innerWidth > 600) {
         setUlVisible(true)
       }
     }
@@ -27,10 +28,10 @@ export default function FooterUL({ text, dataArray, propName, url }) {
     }
 
     return (
-      <>
+      <div className='footer-ul'>
         <button onClick={toggleVisibility}>{text}</button>
         {ulVisible && (
-          <ul id="footerLinks" role='list'>
+          <ul>
             {dataArray.map((item, index) => (
               <li key={index}>
                 <Link to={item[url]}>
@@ -40,6 +41,6 @@ export default function FooterUL({ text, dataArray, propName, url }) {
             ))}
           </ul>
         )}
-      </>
+      </div>
     )
 }
