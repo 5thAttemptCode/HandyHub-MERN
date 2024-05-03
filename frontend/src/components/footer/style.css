@@ -2,15 +2,35 @@ footer{
     padding-inline: 5em;
     
     .footer-container{
-        display: flex;
         justify-content: space-between;
+        border-top: 1px solid var(--hoverColor);
+        padding-block: 2em;
+
+        &:nth-child(1){
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        &:nth-child(2){
+            display: flex;
+
+            @media(max-width: 650px){
+                flex-direction: column;
+                gap: 2rem
+            }
+        }
 
         .footer-box{
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            padding-block: 2em;
+
+            &:nth-child(1){
+                @media(max-width: 768px){
+                    flex-direction: column;
+                }
+            }
 
             > p{
                 font-size: 12px;
