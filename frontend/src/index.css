@@ -1,23 +1,36 @@
-/* @import url(https://db.onlinewebfonts.com/c/79174e198176f8e04958195dcee95e84?family=Orion+Esperanto+Dika); */
+@import url('https://fonts.cdnfonts.com/css/domaine-display-narrow');
 
 :root{
-  --fontColor: #141414;
-  --hoverColor: #e3e3e3;
+  /*___STATIC___*/
   --logoColor: #ff9225;
   --borderColor: #c7c7c7;
-  --background: #ffffff;
-
-  --logoFont: "Orion Esperanto Dika";
+  --lightFontColor: #f9f9f9;
+  --successToast: #bfd9be;
+  --errorToast: #ff9e99;
   --borderRadius: 5px;
+  --buttonGreen: #1dbf73;
+  --buttonHoverGreen: #189c5f;
+  --buttonBackground: #808080;
+
+  /*___FLEXIBLE___*/
+  --fontColor: #141414;
+  --background: #ffffff;
+  --hoverColor: #c8eede;
+  --gridContainerOne: #d1eae0;
+  --gridContainerTwo: #e4eeea;
+  --gridContainerThree: #4c1022;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root{
     --fontColor: #f9f9f9;
-    --background: #141414;
-    --hoverColor: #2d2d2d;
+    --background: #111827;
+    --hoverColor: #1a253b;
+    --gridContainerOne: #1e2644;
+    --gridContainerTwo: #746a5c;
+    --gridContainerThree: #313b61;
   }
-}
+} */
 
 *{
   margin: 0;
@@ -26,6 +39,7 @@
   font-family: Poppins;
   text-decoration: none;
   color: var(--fontColor);
+  list-style: none;
 }
 
 body{
@@ -45,9 +59,17 @@ button{
   cursor: pointer;
 }
 
+label{
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0.2rem;
+}
+
 input{
   color: black;
   padding-left: 0.2rem;
+  padding-block: 0.5rem;
+  border: none;
 }
 
 img{
@@ -67,3 +89,37 @@ section{
   padding-top: 15vh;
   padding-inline: 5em;
 }
+
+.container{
+  padding: 5vw 5em
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 500;
+  padding-right: 1em;
+
+  span{
+    font-family: 'Domaine Display Narrow', sans-serif;
+    font-style: italic;          
+    font-size: 45px;           
+  }
+}
+
+.green-button{
+  background: var(--buttonGreen);
+  color: var(--lightFontColor);
+  transition: all 0.2s;
+
+  &:hover{
+    background: var(--buttonHoverGreen)
+  }
+
+  > .icon{
+    fill: var(--lightFontColor);
+  }
+}
+
+/* 
+--brand-primary: rgb(138, 180, 248);
+--brand-secondary: rgb(193, 168, 226); */
