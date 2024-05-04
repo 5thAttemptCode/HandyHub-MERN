@@ -1,32 +1,31 @@
 .guide-for-you-ul{
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
+
+  .flex-container-box {
+    
+    &:hover img{
+      filter: none;
+    }
 
     img{
-        width: 100%;
-        border-radius: var(--borderRadius);
-        margin-bottom: 0.75rem;
-        filter: brightness(87%);
-
-        &:hover{
-          filter: brightness(100%)
-        }
+      width: 100%;
+      border-radius: var(--borderRadius);
+      margin-bottom: 0.75rem;
+      z-index: 0;
+      filter:brightness(88%);
+      transition: all 0.2s;
     }
-
+  
     a{
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background: rgb(0, 0, 0, 0.1);
-        transition: all 0.2s;
-
-        &:hover{
-          background: transparent;
-        }
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
     }
-
+  
     h3{
-        font-weight: 400;
+      font-weight: 400;
     }
+  }
 }
