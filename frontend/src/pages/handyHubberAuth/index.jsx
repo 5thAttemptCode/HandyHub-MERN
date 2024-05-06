@@ -1,25 +1,17 @@
 import React from 'react'
 import './style.css'
-import HandyLogin from './components/login'
-import HandyRegister from './components/register'
-import TabsAuth from '@/components/tabsAuth'
-import { useAuthStore } from '@/context/AuthContext'
+import SubHeader from '@/components/subHeader'
+import SubHeaderSmall from '@/components/subHeaderSmall'
+import ModalButton from './components/modal/components/modalButton'
 
 
 export default function HandyHubber() {
 
-  const { activeTab, setActiveTab } = useAuthStore()
-
   return (
     <section className='handy-auth'>
-      <div className="handy-auth-container">
-        <TabsAuth
-          activeTab={activeTab}
-          handleChange={(event, newValue) => setActiveTab(newValue)}
-          TabComponentOne={ HandyLogin }
-          TabComponentTwo={ HandyRegister }
-        />
-      </div>
+      <SubHeader text="Work Your Way" />
+      <SubHeaderSmall text="You bring the skill. We'll make earning easy." />
+      <ModalButton />
     </section>
   )
 }
