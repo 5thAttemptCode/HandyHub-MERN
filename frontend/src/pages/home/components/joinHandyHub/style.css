@@ -4,20 +4,19 @@
     width: 100%;
     align-content: center;
     padding-inline-start: 5em;
-    background: #313b61;
+    background: var(--gridContainerThree);
     border-radius: var(--borderRadius);
     overflow: hidden;
     
     > h1{
         font-weight: 700;
-        margin-bottom: 3rem;
         line-height: 1.2;
-    }
+        max-width: 50%;
+        color: var(--lightFontColor);
 
-    > a{
-        background: var(--buttonGreen);
-        padding: 1rem 2rem;
-        border-radius: var(--borderRadius);
+        & span{
+            color: var(--lightFontColor);
+        }
     }
 
     > img{
