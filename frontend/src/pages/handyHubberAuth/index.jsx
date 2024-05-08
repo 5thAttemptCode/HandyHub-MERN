@@ -4,7 +4,8 @@ import SubHeader from '@/components/subHeader'
 import SubHeaderSmall from '@/components/subHeaderSmall'
 import ModalButton from './components/modal/components/modalButton'
 import HowItWorks from './components/howItWorks'
-import AsideContainer from '../../components/asideContainer'
+import AsideContainer from '@/components/asideContainer'
+import FAQ from './components/faq'
 
 
 export default function HandyHubber() {
@@ -17,10 +18,10 @@ export default function HandyHubber() {
         <ModalButton />
       </section>
       <HowItWorks />
-      <AsideContainer>
+      <FAQ />
+      <AsideContainer backgroundColor="var(--gridContainerThree)">
         <SubHeaderSmall text="Sign up and create your first Gig today" />
         <ModalButton />
-        <AsideContainer></AsideContainer>
       </AsideContainer>
     </>
   )
