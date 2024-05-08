@@ -1,0 +1,25 @@
+.faq-ul{
+    margin-top: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* This will make the container take the full width of its parent */
+    max-width: 500px;
+    padding-bottom: 2rem;
+
+    .faq-container{
+        padding: 1rem;
+        border: 1px solid grey;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-radius: var(--borderRadius);
+
+        &:hover{
+            border-left: 7px solid var(--logoColor);
+        }
+
+        > p{
+            padding-top: 1rem;
+        }
+    }
+}
