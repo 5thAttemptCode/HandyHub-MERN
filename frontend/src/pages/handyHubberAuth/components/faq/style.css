@@ -1,9 +1,9 @@
 .faq-ul{
     margin-top: 2rem;
-    gap: 1rem;
     display: flex;
     flex-direction: column;
-    width: 100%; /* This will make the container take the full width of its parent */
+    gap: 1rem;
+    width: 100%;
     max-width: 500px;
     padding-bottom: 2rem;
 
@@ -13,6 +13,10 @@
         cursor: pointer;
         transition: all 0.2s;
         border-radius: var(--borderRadius);
+
+        &.active{
+            border-left: 7px solid var(--logoColor);
+        }
 
         &:hover{
             border-left: 7px solid var(--logoColor);
