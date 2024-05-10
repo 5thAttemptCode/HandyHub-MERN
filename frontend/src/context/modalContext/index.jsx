@@ -3,18 +3,16 @@ import React, { createContext, useState } from 'react'
 
 export const ModalContext = createContext()
 
-  export function ModalProvider({ children }) {
-  const [ isActive, setIsActive ] = useState(false)
+export function ModalProvider({ children }) {
+  const [ modals, setModals ] = useState({})
 
-  // Toggle the active state
-  const toggleModal = () => {
-    setIsActive(!isActive)
+  const toggleModal = (id) => {
+    setModals(prev => ({ ...prev, [id]: !prev[id] }))
   }
 
-  // Pass a context value that holds our state and our function
   return (
-    <ModalContext.Provider value={{ isActive, toggleModal }}>
-     {children}
+    <ModalContext.Provider value={{ modals, toggleModal }}>
+      {children}
     </ModalContext.Provider>
   )
 }
