@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
 import './style.css'
 import AsideContainer from '@/components/asideContainer'
-import faqData from '@/components/data/faq'
+import faqData from '@/components/data/faqData'
 import SubHeader from '@/components/subHeader'
 import SubHeaderSmall from '@/components/subHeaderSmall'
 import useClickOutside from '@/utliz/useClickOutside'
+import CaretIcon from '@/components/caret'
 
 
 export default function FAQ() {
@@ -42,10 +43,11 @@ export default function FAQ() {
             key={item.id} 
             className={`faq-container ${openedIndex === index ? "active" : ""}`}
           >
-            <SubHeaderSmall text={item.question} />
-            {openedIndex === index && (
+            <span>
+              <SubHeaderSmall text={item.question} />
+              <CaretIcon size={21} stateProp={openedIndex === index} />
+            </span>
               <p>{item.answer}</p>
-            )}
           </li>
         ))}
       </ul>
