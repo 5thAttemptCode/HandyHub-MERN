@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './style.css'
 import useClickOutside from '@/utliz/useClickOutside'
-import { CaretDown } from '@phosphor-icons/react'
+import CaretIcon from '../caret'
 
 
 export default function DropdownMenu(props) {
@@ -36,7 +36,7 @@ export default function DropdownMenu(props) {
     <div className="dropdown" ref={dropdownRef}>
       <button onClick={toggleMenuVisibility}>
         {buttonContent}
-        <CaretDown className='caret' style={{ rotate: menuVisible ? '180deg' : ''}} />
+        <CaretIcon stateProp={menuVisible} />
       </button>
       <div 
         className="dropdown-menu"  

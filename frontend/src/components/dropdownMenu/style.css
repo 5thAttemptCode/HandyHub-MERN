@@ -1,17 +1,8 @@
-:root{
-  --background: white;
-}
-
 .dropdown{
   position: relative;
 
   button{
-
-    .caret{
-      position: relative;
-      transition: all 0.2s;
-      top: 0.15rem
-    }
+    color: var(--fontColor);
   }
 
   .dropdown-menu{
