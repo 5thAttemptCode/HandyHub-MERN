@@ -9,21 +9,36 @@
 
     .faq-container{
         padding: 1rem;
-        border: 1px solid grey;
+        border: 1px solid var(--fontColor);
         cursor: pointer;
-        transition: all 0.2s;
         border-radius: var(--borderRadius);
+        transition: all 0.2s;
 
         &.active{
             border-left: 7px solid var(--logoColor);
+
+            > p{
+                margin-top: 1rem;
+                height: auto;
+                opacity: 1;
+            }
         }
 
         &:hover{
             border-left: 7px solid var(--logoColor);
         }
 
+        > span{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         > p{
-            padding-top: 1rem;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.2s;
+            opacity: 0;
         }
     }
 }
