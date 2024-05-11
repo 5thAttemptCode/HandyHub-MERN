@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Carpenter from './pages/explore/carpenter'
 import Electrician from './pages/explore/electrician'
 import HandyHubber from './pages/handyHubberAuth'
@@ -20,15 +20,20 @@ import LinkOne from './pages/guideForYou/linkOne'
 import LinkTwo from './pages/guideForYou/linkTwo'
 import LinkThree from './pages/guideForYou/linkThree'
 import ScrollToTop from './utliz/scrollToTop'
-
+import { ModalProvider } from './context/modalContext'
+import HandyModal from './pages/handyHubberAuth/components/modal'
+import HubberStories from './pages/handyHubberAuth/components/hubberGrid/hubberStories'
 
 
 export default function App() {
 
   return (
+    <ModalProvider>
       <Router>
         <Navbar />
         <ScrollToTop />
+        <HandyModal />
+        <HubberStories />
         <Toaster position="top-right" toastOption={{duration: 1000}} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -52,6 +57,7 @@ export default function App() {
         </Routes>
         <Footer />
       </Router>
+    </ModalProvider>
   )
 }
 
