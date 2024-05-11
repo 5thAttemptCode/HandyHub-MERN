@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+
+.hubber-stories-wrapper{
+    position: relative;
+    height: 70vh;
+    width: 70vw;
+    display: flex;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+
+    .hubber-quote{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        background: rgb(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        max-width: 450px;
+        padding: 1rem;
+        border-radius: var(--borderRadius);
+
+        > span{
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Neuton", serif;
+        }
+
+        h5{
+            margin-top: 1rem;
+        }
+    }
+
+    img{
+        height: 100%;
+        width: 70%;
+        object-fit: cover;
+    }
+
+    .hubber-stories-container{
+        height: 100%;
+        width: 100%;
+        background: var(--background);
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        > p{
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

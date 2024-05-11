@@ -1,0 +1,47 @@
+.modal-button-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    padding-block: 2rem;
+
+    &:has(.modal-button:hover) .modal-button:not(:hover) {
+        opacity: 0.5;
+        filter: grayscale(70%) blur(2px);
+    }
+
+    > .modal-button{
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1;
+        padding: 0;
+        margin: 0;
+        background: none;
+        transition: all 0.5s;
+
+        &:hover{
+            background: none;
+            transition: all 0.5s;
+
+            img{
+                scale: 1.03;
+            }
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+            transition: all 0.5s;
+        }
+
+        h3{
+            z-index: 10000
+        }
+    }
+}
