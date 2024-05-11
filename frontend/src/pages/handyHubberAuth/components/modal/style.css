@@ -1,0 +1,11 @@
+.tabs-container{
+    background: var(--hoverColor);
+    border-radius: var(--borderRadius);
+    padding-bottom: 2rem;
+    max-width: 370px;
+
+    span{
+        display: flex;
+        margin-left: 2rem;
+    }
+  }

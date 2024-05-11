@@ -14,12 +14,14 @@ export default function HandyModal() {
 
   return (
     <Modal id="authModal">
-      <TabsAuth
-        activeTab={activeTab}
-        handleChange={(event, newValue) => setActiveTab(newValue)}
-        TabComponentOne={ HandyLogin }
-        TabComponentTwo={ HandyRegister }
-      />
+      <div className="tabs-container">
+        <TabsAuth
+          activeTab={activeTab}
+          handleChange={(event, newValue) => setActiveTab(newValue)}
+          TabComponentOne={ HandyLogin }
+          TabComponentTwo={ HandyRegister }
+        />
+      </div>
     </Modal>
   )
 }
