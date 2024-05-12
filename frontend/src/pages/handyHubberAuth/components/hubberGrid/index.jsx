@@ -18,7 +18,7 @@ export default function HubberGrid() {
             key={story.id} 
             id={story.modalID}  
           >
-            <SubHeaderSmall text={story.name} />
+            <SubHeaderSmall text={`I am ${story.name}`} />
             <img src={story.image} alt="" />
           </ModalButton>
         ))}
