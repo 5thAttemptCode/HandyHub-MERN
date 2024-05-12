@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
-
 .hubber-stories-wrapper{
     position: relative;
     height: 70vh;
@@ -21,7 +19,7 @@
         > span{
             font-size: 25px;
             font-style: italic;
-            font-family: "Neuton", serif;
+            font-family: 'Domaine Display Narrow', sans-serif;
         }
 
         h5{
