@@ -1,9 +1,9 @@
 .modal-button-wrapper{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     padding-block: 2rem;
 
     &:has(.modal-button:hover) .modal-button:not(:hover) {
@@ -15,10 +15,13 @@
         position: relative;
         overflow: hidden;
         aspect-ratio: 1;
-        padding: 0;
         margin: 0;
+        padding: 0;
         background: none;
         transition: all 0.5s;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
 
         &:hover{
             background: none;
@@ -41,7 +44,13 @@
         }
 
         h3{
-            z-index: 10000
+            font-size: 22px;
+            text-align: left;
+            background: rgb(17, 24, 39, 0.5);
+            backdrop-filter: blur(3px);
+            width: 100%;
+            padding-block: 0.5rem;
+            padding-left: 1rem;
         }
     }
 }
