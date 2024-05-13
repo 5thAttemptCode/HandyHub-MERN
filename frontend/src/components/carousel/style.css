@@ -1,8 +1,8 @@
 .embla {
   position: relative;
-  height: 50vh;
 
   .embla__viewport{
+    position: relative;
     height: 100%;
     overflow: hidden;
 
@@ -14,23 +14,28 @@
       .embla__slide{
         position: relative;
         height: 100%;
-        flex: 0 0 300px;
+        height: 360px;
+        aspect-ratio: 1 / 1.4;
+        flex: 0 0 auto;
         min-width: 0;
         margin-left: 3rem;
+        border-radius: var(--borderRadius);
+        overflow: hidden;
+        padding: 1rem 1.5rem;
+
+        > h2, > p{
+          color: var(--lightFontColor);
+          font-weight: 600;
+        }
 
         > img{
           position: absolute;
           top: 0;
+          left: 0;
           z-index: -1;
           height: 100%;
           width: 100%;
           object-fit: cover;
-          filter: brightness(87%);
-          border-radius: var(--borderRadius);
-
-          &:hover{
-            filter: brightness(100%)
-          }
         }
 
         > a{
@@ -40,7 +45,7 @@
           height: 100%;
           width: 100%;
           z-index: 20;
-          background: rgb(0, 0, 0, 0.15);
+          background: rgb(0, 0, 0, 0.1);
           transition: all 0.2s;
 
           &:hover{
@@ -65,6 +70,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 650px){
+      display: none;
+    }
   }
 
   .embla__button--next{
