@@ -1,6 +1,10 @@
 .best-part-ul{
   padding-right: 20%;
 
+  @media (max-width: 1024px){
+    padding-right: 0%;
+  }
+
   li{
 
     > h3{
@@ -22,4 +26,8 @@
   width: 100%;
   object-fit: cover;
   border-radius: var(--borderRadius);
+
+  @media (max-width: 1024px){
+    display: none;
+  }
 }
