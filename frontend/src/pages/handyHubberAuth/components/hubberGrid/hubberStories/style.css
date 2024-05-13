@@ -17,7 +17,7 @@
         border-radius: var(--borderRadius);
 
         > span{
-            font-size: 25px;
+            font-size: 23px;
             font-style: italic;
             font-family: 'Domaine Display Narrow', sans-serif;
         }
@@ -42,10 +42,16 @@
         flex-direction: column;
         gap: 1.5rem;
 
-        > p{
+        > h4{
             font-size: 18px;
             display: flex;
             align-items: center;
+
+            span{
+                font-weight: 300;
+                font-style: italic;
+                font-size: 14px;
+            }
         }
     }
 }

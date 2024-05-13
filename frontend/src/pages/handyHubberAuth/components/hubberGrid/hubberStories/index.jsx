@@ -19,7 +19,7 @@ export default function HubberStories() {
             </div>
             <div className="hubber-stories-container">
               <SubHeaderSmall text={`HandyHubber since ${story.year}`} />
-              <p>{story.icon}&nbsp;&nbsp;profession: {story.industry}</p>
+              <h4><span>profession:</span>&nbsp;&nbsp;{story.industry}&nbsp;&nbsp;{story.icon}</h4>
               <p>{story.stats}</p>
             </div>
           </div>
