@@ -1,42 +1,40 @@
 .searchbar{
     position: relative;
-    margin-block: 1rem;
+    margin-block: 1.3rem;
+    max-width: 600px;
+    min-width: 250px;
+    width: 100%;
     
     > form{
-        --height: auto;
         border-radius: var(--borderRadius);
         overflow: hidden;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #1dbf73;
+        border: 1px solid var(--fontColor);
 
         > input{
-            width: 500px;
-            border: none;
+            width: 100%;
             outline: none;
+            font-size: 1rem;
             padding-inline: 0.6rem;
-            border: 1px solid var(--fontColor);
+            border-radius: 0;
         }
 
         > button{
-            padding-inline: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-inline: 1rem;
         }
-    }
+    }   
 
     > ul{
         width: 100%;
         position: absolute;
-        top: var(--height);
         margin-top: 5px;
         background: white;
         border-radius: var(--borderRadius);
         border: 1px solid var(--fontColor);
         padding: 0.3rem 0.6rem;
-
         
         li{
             color: black;
