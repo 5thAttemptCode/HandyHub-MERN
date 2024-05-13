@@ -7,12 +7,23 @@
     background: var(--gridContainerThree);
     border-radius: var(--borderRadius);
     overflow: hidden;
+
+    @media(max-width: 1024px){
+        height: auto;
+        padding-block: 2rem;
+        text-align: center;
+        padding-inline-end: 5em;
+    }
     
     > h1{
         font-weight: 700;
         line-height: 1.2;
         max-width: 50%;
         color: var(--lightFontColor);
+
+        @media(max-width: 1024px){
+            max-width: 100%;
+        }
 
         & span{
             color: var(--lightFontColor);
@@ -21,9 +32,29 @@
 
     > img{
         position: absolute;
-        right: 0;
         top: 0;
         height: 100%;
         scale: 1.2;
+
+        @media(min-width: 1800px){
+            right: 0;
+        }
+
+        @media(max-width: 1800px){
+            right: -10%;
+        }
+
+        @media(max-width: 1400px){
+            right: -20%;
+            scale: 1;
+        }
+
+        @media(max-width: 1200px){
+            right: -30%;
+        }
+
+        @media(max-width: 1024px){
+            display: none;
+        }
     }
 }
