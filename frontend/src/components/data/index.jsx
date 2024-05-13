@@ -10,7 +10,7 @@ export const IndustryData = [
     icon: <HouseSimple size={size} />,
     subText: "Roofs done right, guaranteed tight!",
     mainText: "Building a roof is such an exciting phase but it is also extremely crucial. Your actions and decisions may have long-term repercussions if not aligned to industry standards. Whether it is a new roof or a replacement that involves different types of roof construction, there are factors that you have to bear in mind.",
-    image: "https://images.pexels.com/photos/2980954/pexels-photo-2980954.jpeg",
+    image: "https://images.pexels.com/photos/2904142/pexels-photo-2904142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     tags: ["tiles", "roof", "roofer", "wall", "bricks", "slate", "insolation", "leaky construction", "wood", "water"]
   },
 
@@ -40,7 +40,7 @@ export const IndustryData = [
     icon: <House size={size} />,
     subText: "Elevating Spaces, Elevating Life",
     mainText: "Carpentry is one of the oldest construction trades and is in high demand. Carpenters use natural materials (wood/timber) to install wooden fixtures and fittings. As a carpenter you could be installing doors, floors and furniture in new builds, renovating or refitting existing structures, building sets for film and theatre companies and much more.",
-    image: "https://images.pexels.com/photos/5768031/pexels-photo-5768031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://images.pexels.com/photos/14408187/pexels-photo-14408187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     tags: ["wall", "insolation", "water", "color", "paint", "wood construction", "dry wall", "renovation", "wallpaper", "concrete"]
   },
 
