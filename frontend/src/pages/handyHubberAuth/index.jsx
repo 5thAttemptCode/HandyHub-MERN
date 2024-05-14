@@ -1,12 +1,13 @@
 import React from 'react'
 import './style.css'
+import Banner from './components/banner'
+import FAQ from './components/faq'
+import HowItWorks from './components/howItWorks'
+import HubberGrid from './components/hubberGrid'
+import JoinToday from './components/joinToday'
+import ModalButton from '@/components/modal/components/modalButton'
 import SubHeader from '@/components/subHeader'
 import SubHeaderSmall from '@/components/subHeaderSmall'
-import HowItWorks from './components/howItWorks'
-import AsideContainer from '@/components/asideContainer'
-import FAQ from './components/faq'
-import ModalButton from '@/components/modal/components/modalButton'
-import HubberGrid from './components/hubberGrid'
 
 
 export default function HandyHubber() {
@@ -21,13 +22,11 @@ export default function HandyHubber() {
         <SubHeaderSmall text="You bring the skill. We'll make earning easy." />
         <ModalButton id={authlId} text={modalText} />
       </section>
+      <Banner />
       <HubberGrid />
       <HowItWorks />
       <FAQ />
-      <AsideContainer backgroundColor="var(--gridContainerThree)">
-        <SubHeaderSmall text="Sign up and create your first Gig today" />
-        <ModalButton id={authlId} text={modalText} />
-      </AsideContainer>
+      <JoinToday />
     </>
   )
 }
