@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './style.css'
 import { IndustryData } from '../data'
 import { MagnifyingGlass } from '@phosphor-icons/react'
+import useClickOutside from '@/utliz/useClickOutside'
 
 
 export default function SearchBar() {
@@ -10,22 +11,18 @@ export default function SearchBar() {
   const [searchResults, setSearchResults] = useState([])
   const searchRef = useRef(null)
 
-  //Close ul on outside-click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setSearchResults([])
-      }
-    }
-    
-    document.addEventListener('mousedown', handleClickOutside)
-  
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+  // Toggle function to clear search results
+  const clearSearchResults = () => setSearchResults([])
 
-  //filtering tags and remove duplicates
+  // Use the custom hook
+  useClickOutside({
+    containerRef: searchRef,
+    childRef: searchRef,
+    isActive: searchResults.length > 0,
+    toggle: clearSearchResults
+  })
+
+  // Filtering tags and remove duplicates
   const handleChange = (event) => {
     setInputValue(event.target.value)
     let filteredTags = []
@@ -51,7 +48,9 @@ export default function SearchBar() {
           value={inputValue}
           onChange={handleChange}
         />
-        <button><MagnifyingGlass size={22} /></button>
+        <button type="button" className='green-button'>
+          <MagnifyingGlass className='icon' size={20} />
+        </button>
       </form>
       {searchResults.length > 0 && (
         <ul>
