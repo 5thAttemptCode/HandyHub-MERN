@@ -4,29 +4,33 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { userRouter } from './routes/authRoutes.js'
 import { handyHubberRouter } from './routes/handyRoutes.js'
-             
 
-dotenv.config()  
+ 
+dotenv.config()
 
 const app = express()
 
-//middleware
+// Middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST'],
+  credentials: true
+}))
 
 app.use("/auth", userRouter)
 app.use("/become-a-handyhubber", handyHubberRouter)
 
 mongoose.set('debug', true)
 
-//DB connection
-mongoose.connect(process.env.VITE_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log("DATABASE CONNECTED"))
-.catch((err) => console.log("ERROR CONNECTION DB", err))
+// DB connection
+mongoose.connect(process.env.VITE_MONGO_URL)
+  .then(() => console.log("DATABASE CONNECTED"))
+  .catch((err) => console.log("ERROR CONNECTION DB", err))
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!')
 })
 
-app.listen(3001, () => console.log("Server is runnin 100 miles"))
+app.listen(3001, () => console.log("Server is running at 100 miles"))
