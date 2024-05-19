@@ -1,6 +1,10 @@
 .responsive-menu-wrapper{
     display: none;
 
+    @media(max-width: 768px){
+      display: block;
+    }
+
     > .dropdown{
 
         > .dropdown-menu{
@@ -29,11 +33,5 @@
                 padding-top: 1em;
             }
         }
-    }
-}
-
-@media(max-width: 768px){
-    .responsive-menu-wrapper{
-        display: block;
     }
 }
