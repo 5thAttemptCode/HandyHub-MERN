@@ -1,9 +1,9 @@
 footer{
-    padding-inline: 5em;
+    padding-inline: clamp(1rem, -4rem + 16vw, 5rem);
     
     .footer-container{
         justify-content: space-between;
-        border-top: 1px solid var(--hoverColor);
+        border-top: 1px solid var(--borderColor);
         padding-block: 2em;
 
         &:nth-child(1){
