@@ -3,7 +3,7 @@
     height: 60vh;
     width: 100%;
     align-content: center;
-    padding-inline-start: 5em;
+    padding-inline-start: clamp(1rem, -4rem + 16vw, 5rem);
     background: var(--gridContainerThree);
     border-radius: var(--borderRadius);
     overflow: hidden;
