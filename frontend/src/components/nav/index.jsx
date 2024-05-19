@@ -39,8 +39,8 @@ export default function Navbar() {
             <Link className='hanhub' to="/become-a-handyhubber">HandyHubber</Link>
             <Link to="/auth" onClick={() => setActiveTab(1)}>Login</Link>
             <Link to="/auth" onClick={() => setActiveTab(2)}>Sign Up</Link>
-            <ResponsiveMenu />
           </ul>
+          <ResponsiveMenu />
         </div>
         {showSubNav &&
           <div className="sub-nav">

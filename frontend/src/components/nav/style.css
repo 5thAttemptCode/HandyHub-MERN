@@ -63,13 +63,13 @@ nav{
   }
 }
 
-
-
 @media(max-width: 768px){
   nav{
-    > ul{
-      > .dropdown, >a{
-        display: none
+    .nav-container{
+      > ul{
+        .dropdown, >a{
+          display: none
+        }
       }
     }
   }
