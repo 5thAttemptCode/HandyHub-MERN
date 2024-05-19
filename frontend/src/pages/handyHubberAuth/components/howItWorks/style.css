@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     background: var(--gridContainerOne);
-    padding-top: 3vw;
+    padding-top: 2rem;
 
     > .flex-container{
         padding-block: 0 3vw;
@@ -11,6 +11,11 @@
         > .flex-container-box{
             padding-inline: 2rem;
             text-align: center;
+            max-width: 400px;
+
+            @media(max-width: 987px){
+                padding-block: 2rem;
+            }
 
             > h3{
                 margin-block: 1rem;
