@@ -2,7 +2,6 @@
     position: relative;
     height: 60vh;
     width: 100%;
-    align-content: center;
     padding-inline-start: clamp(1rem, -4rem + 16vw, 5rem);
     background: var(--gridContainerThree);
     border-radius: var(--borderRadius);
@@ -12,7 +11,7 @@
         height: auto;
         padding-block: 2rem;
         text-align: center;
-        padding-inline-end: 5em;
+        padding-inline-end: clamp(1rem, -4rem + 16vw, 5rem);
     }
     
     > h1{
@@ -23,6 +22,7 @@
 
         @media(max-width: 1024px){
             max-width: 100%;
+            padding: 0;
         }
 
         & span{
