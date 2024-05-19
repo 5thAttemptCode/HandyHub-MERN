@@ -1,56 +1,24 @@
-.hubber-stories-wrapper{
-    position: relative;
-    height: 70vh;
-    width: 70vw;
+.how-it-works{
     display: flex;
-    border-radius: var(--borderRadius);
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    background: var(--gridContainerOne);
+    padding-top: 2rem;
 
-    .hubber-quote{
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        background: rgb(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        max-width: 450px;
-        padding: 1rem;
-        border-radius: var(--borderRadius);
+    > .flex-container{
+        padding-block: 0 3vw;
 
-        > span{
-            font-size: 23px;
-            font-style: italic;
-            font-family: 'Domaine Display Narrow', sans-serif;
-        }
+        > .flex-container-box{
+            padding-inline: 2rem;
+            text-align: center;
+            max-width: 400px;
 
-        h5{
-            margin-top: 1rem;
-        }
-    }
+            @media(max-width: 987px){
+                padding-block: 2rem;
+            }
 
-    img{
-        height: 100%;
-        width: 70%;
-        object-fit: cover;
-    }
-
-    .hubber-stories-container{
-        height: 100%;
-        width: 100%;
-        background: var(--background);
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        > h4{
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-
-            span{
-                font-weight: 300;
-                font-style: italic;
-                font-size: 14px;
+            > h3{
+                margin-block: 1rem;
             }
         }
     }
