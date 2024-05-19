@@ -28,4 +28,9 @@
       font-weight: 400;
     }
   }
+
+  @media(max-width: 650px){
+    flex-direction: column;
+    gap: 4rem
+  }
 }
