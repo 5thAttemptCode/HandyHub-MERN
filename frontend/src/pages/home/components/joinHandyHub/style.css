@@ -1,60 +1,41 @@
-.help{
-    position: relative;
-    height: 60vh;
-    width: 100%;
-    padding-inline-start: clamp(1rem, -4rem + 16vw, 5rem);
+.join-handyhub-flex-container-box{
     background: var(--gridContainerThree);
-    border-radius: var(--borderRadius);
+    padding: 2rem;
+    min-width: 50%;
+    height: 60vh;
     overflow: hidden;
 
-    @media(max-width: 1024px){
-        height: auto;
-        padding-block: 2rem;
+    &:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        padding-inline-end: clamp(1rem, -4rem + 16vw, 5rem);
-    }
-    
-    > h1{
-        font-weight: 700;
-        line-height: 1.2;
-        max-width: 50%;
-        color: var(--lightFontColor);
-
-        @media(max-width: 1024px){
-            max-width: 100%;
-            padding: 0;
-        }
-
-        & span{
-            color: var(--lightFontColor);
-        }
+        border-top-left-radius: var(--borderRadius);
+        border-bottom-left-radius: var(--borderRadius);
     }
 
-    > img{
-        position: absolute;
-        top: 0;
-        height: 100%;
-        scale: 1.2;
-
-        @media(min-width: 1800px){
-            right: 0;
-        }
-
-        @media(max-width: 1800px){
-            right: -10%;
-        }
-
-        @media(max-width: 1400px){
-            right: -20%;
-            scale: 1;
-        }
-
-        @media(max-width: 1200px){
-            right: -30%;
-        }
+    &:nth-child(2){
+        border-top-right-radius: var(--borderRadius);
+        border-bottom-right-radius: var(--borderRadius);
 
         @media(max-width: 1024px){
             display: none;
         }
     }
+
+    > h1{
+        padding: 0;
+        max-width: 90%;
+    }
+
+    > img{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
 }
