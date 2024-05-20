@@ -1,33 +1,32 @@
 import React from 'react'
 import './style.css'
-import { CurrencyCircleDollar, Handshake, Wrench } from '@phosphor-icons/react'
-import SubHeader from '@/components/subHeader'
+import Modal from '@/components/modal'
+import HubberStoriesData from '@/components/data/hubberStoriesData'
 import SubHeaderSmall from '@/components/subHeaderSmall'
-import FlexContainer from '@/components/flexContainer'
-import FlexContainerBox from '@/components/flexContainer/components/flexContainerBox'
 
 
-export default function HowItWorks() {
+export default function HubberStories() {
+
   return (
-    <div className="how-it-works">
-      <SubHeader marginBottom="2rem" text="How it works" />
-      <FlexContainer>
-        <FlexContainerBox>
-          <Wrench size={38} />
-          <SubHeaderSmall text="Creat a gig" />
-          <p>Sign up for free, set up your Gig, and offer your work to our global audience.</p>
-        </FlexContainerBox>
-        <FlexContainerBox>
-          <Handshake size={38} />
-          <SubHeaderSmall text="Deliver great work" />
-          <p>Get notified when you get an order and use our system to discuss details with customers.</p>
-        </FlexContainerBox>
-        <FlexContainerBox>
-          <CurrencyCircleDollar size={38} />
-          <SubHeaderSmall text="Get paid" />
-          <p>Get paid on time, every time. Payment is available for withdrawal as soon as it clears.</p>
-        </FlexContainerBox>
-      </FlexContainer>
-    </div>
+    <>
+      {HubberStoriesData.map((story, index) => (
+        <Modal id={story.modalID} key={story.id}>
+          <div className="hubber-stories-wrapper">
+            <div className="hubber-stories-image">
+              <img src={story.image} alt="" />
+              <div className="hubber-quote">
+                <span>{story.story} </span>
+                <h5>| {story.name}</h5>
+              </div>
+            </div>
+            <div className="hubber-stories-container">
+              <SubHeaderSmall text={`HandyHubber since ${story.year}`} />
+              <h4><span>profession:</span>&nbsp;&nbsp;{story.industry}&nbsp;&nbsp;{story.icon}</h4>
+              <p>{story.stats}</p>
+            </div>
+          </div>
+        </Modal>
+      ))}
+    </>
   )
 }

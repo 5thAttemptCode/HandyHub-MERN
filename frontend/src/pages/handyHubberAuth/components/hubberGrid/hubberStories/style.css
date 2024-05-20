@@ -1,24 +1,81 @@
-.how-it-works{
+.hubber-stories-wrapper{
+    position: relative;
+    height: 70vh;
+    width: 70vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--gridContainerOne);
-    padding-top: 2rem;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
 
-    > .flex-container{
-        padding-block: 0 3vw;
+    @media(max-width: 1024px){
+        flex-direction: column;
+    }
 
-        > .flex-container-box{
-            padding-inline: 2rem;
-            text-align: center;
+    .hubber-stories-image{
+        position: relative;
+        width: 70%;
+        display: flex;
+        padding: 1rem;
+
+        @media(max-width: 1024px){
+            width: 100%;
+            height: 60%;
+        }
+
+        > img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .hubber-quote{
+            background: rgb(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
             max-width: 400px;
+            padding: 1rem;
+            border-radius: var(--borderRadius);
+            align-self: flex-end;
 
-            @media(max-width: 987px){
-                padding-block: 2rem;
+            > span{
+                font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+                font-style: italic;
+                font-family: 'Domaine Display Narrow', sans-serif;
+                letter-spacing: 1px;
             }
 
-            > h3{
-                margin-block: 1rem;
+            h5{
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .hubber-stories-container{
+        height: 100%;
+        width: 40%;
+        background: var(--background);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @media(max-width: 1024px){
+            width: 100%;
+            height: 30%;
+            gap: 1rem;
+            padding-block: 1.5rem;
+        }
+
+        > h4{
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+
+            span{
+                font-weight: 300;
+                font-style: italic;
+                font-size: 14px;
             }
         }
     }
