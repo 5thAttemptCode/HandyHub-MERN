@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { userRouter } from './routes/authRoutes.js'
 import { handyHubberRouter } from './routes/handyRoutes.js'
+import { handyCompanyRouter } from './routes/handyCompanyRoutes.js'
 
  
 dotenv.config()
@@ -20,6 +21,7 @@ app.use(cors({
 
 app.use("/auth", userRouter)
 app.use("/become-a-handyhubber", handyHubberRouter)
+app.use("/register-form", handyCompanyRouter)
 
 mongoose.set('debug', true)
 
