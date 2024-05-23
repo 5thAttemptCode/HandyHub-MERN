@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const HandyCompanySchema = new mongoose.Schema({
   companyName: {
@@ -27,4 +27,4 @@ const HandyCompanySchema = new mongoose.Schema({
   }
 })
 
-export const HandyHubber = mongoose.model('HandyCompany', HandyCompanySchema)
+export const HandyCompany = mongoose.model('HandyCompany', HandyCompanySchema)
