@@ -3,7 +3,7 @@ const router = express.Router()
 const HandyCompany = require('../models/HandyCompany')
 
 
-router.post('/register', async (req, res) => {
+router.post('/register-form', async (req, res) => {
   const { companyName, industry, companyPhone, companyMail, companyDescription } = req.body
   
   // Validate the input
