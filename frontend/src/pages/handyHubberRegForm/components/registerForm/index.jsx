@@ -51,41 +51,54 @@ export default function RegisterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Company Name</label>
-      <input 
-        type='text'
-        value={companyName}
-        onChange={(e) => setCompanyName(e.target.value)}
-      />
+    <form className='register-form' onSubmit={handleSubmit}>
+      <article>
+        <label>Company Name</label>
+        <input 
+          type='text'
+          value={companyName}
+          onChange={(e) => setCompanyName(e.target.value)}
+        />
+      </article>
 
-      <DropdownMenu buttonContent={selectedIndustry}>
-        {IndustryData.map((data, index) =>
-          <option key={data.industryName} onClick={() => handleChange(data.industryName)}>
-            {data.industryName}
-          </option>
-        )}
-      </DropdownMenu>
+      <article>
+        <label>Select your industry</label>
+        <DropdownMenu buttonContent={selectedIndustry}>
+            {IndustryData.map((data, index) =>
+            <option key={data.industryName} onClick={() => handleChange(data.industryName)}>
+                {data.industryName}
+            </option>
+            )}
+        </DropdownMenu>
+      </article>
 
-      <label>Phone</label>
-      <input
-        type='number'
-        value={companyPhone}
-        onChange={(e) => setCompanyPhone(e.target.value)}
-      />
-      <label>Company Mail</label>
-      <input
-        type='email'
-        value={companyMail}
-        onChange={(e) => setCompanyMail(e.target.value)}
-      />
-      <label>Company Description</label>
-      <textarea
-        value={companyDescription}
-        onChange={(e) => setCompanyDescription(e.target.value)}
-      />
+      <article>
+        <label>Phone</label>
+        <input
+          type='number'
+          value={companyPhone}
+          onChange={(e) => setCompanyPhone(e.target.value)}
+        />
+      </article>
+
+      <article>
+        <label>Company Mail</label>
+        <input
+          type='email'
+          value={companyMail}
+          onChange={(e) => setCompanyMail(e.target.value)}
+        />
+      </article>
+
+      <article>
+        <label>Company Description</label>
+        <textarea
+          value={companyDescription}
+          onChange={(e) => setCompanyDescription(e.target.value)}
+        />
+      </article>
         
-      <button type='submit'>Send and Register</button>
+      <button className='green-button' type='submit'>Send and Register</button>
     </form>
   )
 }
