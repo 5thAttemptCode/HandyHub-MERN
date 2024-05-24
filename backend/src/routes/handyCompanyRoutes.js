@@ -1,14 +1,14 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const HandyCompany = require('../models/HandyCompany')
+import { HandyCompany } from '../models/HandyCompany.js'
 
 
-router.post('/register-form', async (req, res) => {
+router.post("/", async (req, res) => {
   const { companyName, industry, companyPhone, companyMail, companyDescription } = req.body
   
   // Validate the input
   if (!companyName || !industry || !companyPhone || !companyMail || !companyDescription) {
-    return res.status(400).json({ msg: 'Please enter all fields' })
+    return res.status(400).json({ msg: "Please enter all fields" })
   }
   
   try {
@@ -27,7 +27,7 @@ router.post('/register-form', async (req, res) => {
     res.status(201).json(newHandyHubber)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ msg: 'Server error' })
+    res.status(500).json({ msg: "Server error" })
   }
 })
 
