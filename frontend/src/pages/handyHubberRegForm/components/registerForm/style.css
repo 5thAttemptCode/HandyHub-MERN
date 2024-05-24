@@ -1,10 +1,34 @@
-.dropdown{
+.register-form{
+  width: 400px;
+      
+  article{
+    display: grid;
+    margin-top: 2rem;
 
-  .dropdown-menu{
+    label{
+        opacity: 0.75;
+    }
+
+    .dropdown{
+      .dropdown-menu{
+        option{
+          padding: 0.5em 1.2em;
+          cursor: pointer;
     
-    option{
-      padding: 0.5em 1.2em;
-      cursor: pointer;
+          &:hover{
+            background: var(--hoverColor);
+          }
+        }
+      }
+    }
+
+    textarea{
+      height: 300px;
     }
   }
+
+  > button{
+    margin-top: 2rem;
+  }
+
 }
