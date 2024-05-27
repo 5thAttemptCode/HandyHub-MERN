@@ -3,9 +3,12 @@ import './style.css'
 import DropdownMenu from '@/components/dropdownMenu'
 import { IndustryData } from '@/components/data'
 import { ToastError, ToastSuccess } from '@/components/toastMessage'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function RegisterForm() {
+
+  const navigate = useNavigate()
 
   // select from dropdown
   const handleChange = (industry) => {
@@ -41,10 +44,12 @@ export default function RegisterForm() {
         throw new Error('Network response was not ok')
       }
   
-      const data = await response.text() // First get text
-      const jsonData = data ? JSON.parse(data) : {} // Safely parse JSON only if there's data
-  
+      const data = await response.json()
       ToastSuccess({ message: "Company registered successfully" })
+
+      const selectedIndustryUrl = IndustryData.find(data => data.industryName === selectedIndustry).url;
+      navigate(`/${selectedIndustryUrl}`, { state: { companyName, companyPhone, companyMail, companyDescription } });
+    
     } catch (error) {
       ToastError({ message: "Whoopsy, something went wrong." })
     }
