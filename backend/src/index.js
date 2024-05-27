@@ -22,6 +22,7 @@ app.use(cors({
 app.use("/auth", userRouter)
 app.use("/become-a-handyhubber", handyHubberRouter)
 app.use("/register-form", handyCompanyRouter)
+app.use('/', handyCompanyRouter)
 
 mongoose.set('debug', true)
 
