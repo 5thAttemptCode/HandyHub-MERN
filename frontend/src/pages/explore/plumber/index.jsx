@@ -1,4 +1,6 @@
 import React from 'react'
+import '../style.css'
+import CompanyContainer from '@/components/companyContainer'
 import PageHeader from '@/components/pageHeader'
 import { IndustryData } from '@/components/data'
 import { useLocation } from 'react-router-dom'
@@ -33,10 +35,12 @@ export default function Plumber() {
      <ul>
        {allCompanies.map((company, index) => (
          <li key={`${company.companyMail}-${index}`}>
-           <p>Name: {company.companyName}</p>
-           <p>Phone: {company.companyPhone}</p>
-           <p>Email: {company.companyMail}</p>
-           <p>Description: {company.companyDescription}</p>
+          <CompanyContainer to="/">
+            <p>Name: {company.companyName}</p>
+            <p>Phone: {company.companyPhone}</p>
+            <p>Email: {company.companyMail}</p>
+            <p>Description: {company.companyDescription}</p>
+          </CompanyContainer>
          </li>
        ))}
      </ul>
