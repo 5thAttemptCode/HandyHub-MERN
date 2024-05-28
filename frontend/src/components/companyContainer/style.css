@@ -1,0 +1,15 @@
+.company-container{
+    position: relative;
+    border: 1px solid var(--fontColor);
+    padding: 1rem;
+    height: 300px;
+    border-radius: var(--borderRadius);
+
+    > a{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
