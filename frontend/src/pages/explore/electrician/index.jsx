@@ -5,6 +5,7 @@ import { IndustryData } from '@/components/data'
 import { useLocation } from 'react-router-dom'
 import useFetchCompanyData from '@/utliz/usePostCompany'
 import CompanyList from '../exploreComponents/companyList'
+import useSortedCompanies from '@/utliz/useSortedCompanies'
 
 
 export default function Electrician() {
@@ -17,11 +18,15 @@ export default function Electrician() {
 
   const allCompanies = state ? [...companies, state] : companies
 
+  const [ selectedOption, setSelectedOption ] = useState("Sort by..")
+  const sortedCompanies = useSortedCompanies(allCompanies, selectedOption)
+
   return (
     <section>
       <PageHeader textH1={industryName} textH4={mainText} />
+      <ExploreNav selectedOption={selectedOption} onChange={setSelectedOption} />
       <CompanyList
-        companies={allCompanies} 
+        companies={sortedCompanies} 
         loading={loading} 
         error={error} 
       />
