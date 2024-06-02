@@ -4,10 +4,10 @@ import { HandyCompany } from '../models/HandyCompany.js'
 
 
 router.post("/", async (req, res) => {
-  const { companyName, industry, companyPhone, companyMail, companyDescription } = req.body
+  const { companyName, industry, companyPhone, companyMail, companyWage, companyDescription } = req.body
   
   // Validate the input
-  if (!companyName || !industry || !companyPhone || !companyMail || !companyDescription) {
+  if (!companyName || !industry || !companyPhone || !companyMail || !companyWage || !companyDescription) {
     return res.status(400).json({ msg: "Please enter all fields" })
   }
   
@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
       industry,
       companyPhone,
       companyMail,
+      companyWage,
       companyDescription
     })
     
