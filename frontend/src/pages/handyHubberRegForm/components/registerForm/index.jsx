@@ -20,6 +20,7 @@ export default function RegisterForm() {
   const [ companyName, setCompanyName ] = useState("")
   const [ companyPhone, setCompanyPhone ] = useState("")
   const [ companyMail, setCompanyMail ] = useState("")
+  const [ companyWage, setCompanyWage ] = useState("")
   const [ companyDescription, setCompanyDescription ] = useState("")
 
   const handleSubmit = async (e) => {
@@ -69,11 +70,11 @@ export default function RegisterForm() {
       <article>
         <label>Select your industry</label>
         <DropdownMenu buttonContent={selectedIndustry}>
-            {IndustryData.map((data, index) =>
-            <option key={data.industryName} onClick={() => handleChange(data.industryName)}>
-                {data.industryName}
-            </option>
-            )}
+          {IndustryData.map((data, index) =>
+          <option key={data.industryName} onClick={() => handleChange(data.industryName)}>
+            {data.industryName}
+          </option>
+          )}
         </DropdownMenu>
       </article>
 
@@ -92,6 +93,15 @@ export default function RegisterForm() {
           type='email'
           value={companyMail}
           onChange={(e) => setCompanyMail(e.target.value)}
+        />
+      </article>
+
+      <article>
+        <label>Hourly wage start at:</label>
+        <input
+          type='text'
+          value={companyWage}
+          onChange={(e) => setCompanyWage(e.target.value)}
         />
       </article>
 
