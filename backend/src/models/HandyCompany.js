@@ -20,6 +20,11 @@ const HandyCompanySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  companyWage: {
+    type: String,
+    required: true,
+  },
   
   companyDescription: {
     type: String,
