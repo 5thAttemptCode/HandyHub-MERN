@@ -1,0 +1,27 @@
+.explore-nav{
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--borderColor);
+
+    .dropdown{
+        display: inline-block;
+        border: 2px solid var(--borderColor);
+        padding: 0.5rem 1rem;
+        border-radius: var(--borderRadius);
+
+        .dropdown-menu{
+            padding: 0.5rem;
+            margin-left: 0.9rem;
+
+            option{
+                padding: 0.75rem;
+                transition: all 0.1s;
+                cursor: pointer;
+                border-radius: var(--borderRadius);
+
+                &:hover{
+                    background: var(--hoverColor)
+                }
+            }
+        }
+    }
+}
