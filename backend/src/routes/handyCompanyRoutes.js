@@ -3,11 +3,23 @@ const router = express.Router()
 import { HandyCompany } from '../models/HandyCompany.js'
 
 
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/') // Ensure this directory exists
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage })
+
 router.post("/", async (req, res) => {
-  const { companyName, industry, companyPhone, companyMail, companyWage, companyDescription } = req.body
+  const { companyName, industry, companyPhone, companyMail, companyWage, companyDescription, companyImage } = req.body
   
   // Validate the input
-  if (!companyName || !industry || !companyPhone || !companyMail || !companyWage || !companyDescription) {
+  if (!companyName || !industry || !companyPhone || !companyMail || !companyWage || !companyDescription || companyImage) {
     return res.status(400).json({ msg: "Please enter all fields" })
   }
   
@@ -19,7 +31,8 @@ router.post("/", async (req, res) => {
       companyPhone,
       companyMail,
       companyWage,
-      companyDescription
+      companyDescription,      
+      companyImage
     })
     
     // Save to database
