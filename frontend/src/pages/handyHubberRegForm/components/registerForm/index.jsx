@@ -22,23 +22,33 @@ export default function RegisterForm() {
   const [ companyMail, setCompanyMail ] = useState("")
   const [ companyWage, setCompanyWage ] = useState("")
   const [ companyDescription, setCompanyDescription ] = useState("")
+  const [ companyImage, setCompanyImage ] = useState(null)
 
+
+   // Handle image file change
+   const handleImageChange = (e) => {
+    setCompanyImage(e.target.files[0])
+  }
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
-  
+
+    // Create a FormData object
+    const formData = new FormData()
+    formData.append('companyName', companyName)
+    formData.append('industry', selectedIndustry)
+    formData.append('companyPhone', companyPhone)
+    formData.append('companyMail', companyMail)
+    formData.append('companyWage', companyWage)
+    formData.append('companyDescription', companyDescription)
+    formData.append('companyImage', companyImage)
+
     try {
+      // Send the form data to the backend
       const response = await fetch("http://localhost:3001/register-form", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          companyName,
-          industry: selectedIndustry,
-          companyPhone,
-          companyMail,
-          companyDescription,
-        }),
+        body: formData, 
       })
   
       if (!response.ok) {
@@ -110,6 +120,15 @@ export default function RegisterForm() {
         <textarea
           value={companyDescription}
           onChange={(e) => setCompanyDescription(e.target.value)}
+        />
+      </article>
+
+      <article>
+        <label>Upload Company Image</label>
+        <input
+          type='file'
+          accept='image/*'
+          onChange={handleImageChange}
         />
       </article>
         
