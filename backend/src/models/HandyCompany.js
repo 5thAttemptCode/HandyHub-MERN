@@ -29,6 +29,11 @@ const HandyCompanySchema = new mongoose.Schema({
   companyDescription: {
     type: String,
     required: true,
+  },
+
+  companyImage: {
+    type: String,
+    required: false, 
   }
 })
 
