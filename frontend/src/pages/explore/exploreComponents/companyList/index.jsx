@@ -16,6 +16,7 @@ export default function CompanyList({ companies, loading, error }) {
       {companies.map((company, index) => (
         <li key={`${company.companyMail}-${index}`}>
           <CompanyContainer to="/">
+            <img src={company.companyImage} alt="company image" />
             <p>Name: {company.companyName}</p>
             {user && (
               <>
