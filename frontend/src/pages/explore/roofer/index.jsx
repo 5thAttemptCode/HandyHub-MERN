@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../style.css'
 import PageHeader from '@/components/pageHeader'
 import { IndustryData } from '@/components/data'
 import { useLocation } from 'react-router-dom'
@@ -18,7 +19,7 @@ export default function Roofer() {
   
   const allCompanies = state ? [...companies, state] : companies
 
-  const [ selectedOption, setSelectedOption ] = useState("Sort by..")
+  const [ selectedOption, setSelectedOption ] = useState("Sort by..  ")
   const sortedCompanies = useSortedCompanies(allCompanies, selectedOption)
 
   return (

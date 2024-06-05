@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import useFetchCompanyData from '@/utliz/usePostCompany'
 import CompanyList from '../exploreComponents/companyList'
 import useSortedCompanies from '@/utliz/useSortedCompanies'
+import ExploreNav from '../exploreComponents/exploreNav'
 
 
 export default function Carpenter() {
