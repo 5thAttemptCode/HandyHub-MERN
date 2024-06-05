@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../style.css'
 import PageHeader from '@/components/pageHeader'
 import { IndustryData } from '@/components/data'
