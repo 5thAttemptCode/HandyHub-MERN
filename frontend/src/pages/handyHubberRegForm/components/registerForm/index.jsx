@@ -33,7 +33,7 @@ export default function RegisterForm() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+  
     // Create a FormData object
     const formData = new FormData()
     formData.append('companyName', companyName)
@@ -43,7 +43,12 @@ export default function RegisterForm() {
     formData.append('companyWage', companyWage)
     formData.append('companyDescription', companyDescription)
     formData.append('companyImage', companyImage)
-
+  
+    // Debugging: Log formData entries
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`)
+    }
+  
     try {
       // Send the form data to the backend
       const response = await fetch("http://localhost:3001/register-form", {
@@ -57,11 +62,18 @@ export default function RegisterForm() {
   
       const data = await response.json()
       ToastSuccess({ message: "Company registered successfully" })
-
-      const selectedIndustryUrl = IndustryData.find(data => data.industryName === selectedIndustry).url;
-      navigate(`/${selectedIndustryUrl}`, { state: { companyName, companyPhone, companyMail, companyDescription } });
-    
+  
+      // Find the selected industry's URL
+      const selectedIndustryData = IndustryData.find(data => data.industryName === selectedIndustry)
+      if (selectedIndustryData) {
+        const selectedIndustryUrl = selectedIndustryData.url;
+        navigate(`/${selectedIndustryUrl}`, { state: { companyName, companyPhone, companyMail, companyDescription } })
+      } else {
+        console.error('Error: Selected industry not found')
+        // Handle the case where the selected industry is not found
+      }
     } catch (error) {
+      console.error('Error:', error)
       ToastError({ message: "Whoopsy, something went wrong." })
     }
   }
