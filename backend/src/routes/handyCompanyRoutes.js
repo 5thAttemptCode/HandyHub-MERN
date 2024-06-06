@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
         cb(null, uploadDir)
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, file.originalname) // Use the original filename
     }
 })
 
@@ -52,9 +52,9 @@ router.post("/", upload.single('companyImage'), async (req, res) => {
         })
 
         // Save to database
-        await newHandyHubber.save();
+        await newHandyHubber.save()
 
-        res.status(201).json(newHandyHubber);
+        res.status(201).json(newHandyHubber)
     } catch (err) {
         console.error(err)
         res.status(500).json({ msg: "Server error" })
