@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../style.css'
 import PageHeader from '@/components/pageHeader'
 import { IndustryData } from '@/components/data'
-import { useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import useFetchCompanyData from '@/utliz/usePostCompany'
 import CompanyList from '../exploreComponents/companyList'
 import ExploreNav from '../exploreComponents/exploreNav'
@@ -31,6 +31,7 @@ export default function Roofer() {
         loading={loading} 
         error={error} 
       />
+      <Outlet />
     </section>
   )
 }
