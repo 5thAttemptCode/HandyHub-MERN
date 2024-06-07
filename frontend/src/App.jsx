@@ -23,6 +23,7 @@ import ScrollToTop from './utliz/scrollToTop'
 import { ModalProvider } from './context/modalContext'
 import HandyModal from './pages/handyHubberAuth/components/modal'
 import HubberStories from './pages/handyHubberAuth/components/hubberGrid/hubberStories'
+import CompanyDetails from './pages/explore/exploreComponents/companyDetails'
 
 
 export default function App() {
@@ -44,12 +45,24 @@ export default function App() {
           <Route path="/handy-hubber-profile" element={<HandyHubberProfileRoute />} />
           <Route path="/register-form" element={<HandyHubberRegisterRoute />} />
 
-          <Route path="/mason" element={<Mason />} />
-          <Route path="/electrician" element={<Electrician />} />
-          <Route path="/painter" element={<Painter />} />
-          <Route path="/carpenter" element={<Carpenter />} />
-          <Route path="/roofer" element={<Roofer />} />
-          <Route path="/plumber" element={<Plumber />} />
+          <Route path="/mason" element={<Mason />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
+          <Route path="/electrician" element={<Electrician />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
+          <Route path="/painter" element={<Painter />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
+          <Route path="/carpenter" element={<Carpenter />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
+          <Route path="/roofer" element={<Roofer />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
+          <Route path="/plumber" element={<Plumber />}>
+            <Route path=":companyName" element={<CompanyDetails />} />
+          </Route>
 
           <Route path="/guide-foryour-home-project-linkOne" element={<LinkOne />} />
           <Route path="/guide-foryour-home-project-linkTwo" element={<LinkTwo />} />
@@ -82,7 +95,7 @@ const HandyHubberProfileRoute = () => {
 
 const HandyHubberRegisterRoute = () => {
   const { handyHubberUser } = useAuthStore()
-  return handyHubberUser ? <HandyHubberRegister /> : <Navigate to="/become-a-handyhubber" />
+  return handyHubberUser ? <HandyHubberRegister /> : <Navigate to="/register-form" />
 }
 
 const HandyHubberLoginRoute = () => {
