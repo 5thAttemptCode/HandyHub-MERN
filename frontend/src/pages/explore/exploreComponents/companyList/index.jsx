@@ -15,13 +15,14 @@ export default function CompanyList({ companies, loading, error }) {
     <ul className='company-ul'>
       {companies.map((company, index) => (
         <li key={`${company.companyMail}-${index}`}>
-          <CompanyContainer to="/">
+          <CompanyContainer to={`${company.companyName}`}>
             <img src={`http://localhost:3001/uploads/${company.companyImage}`} alt="company image" />
-            <p>Name: {company.companyName}</p>
+            <h3>{company.companyName}</h3>
             {user && (
               <>
                 <p>Phone: {company.companyPhone}</p>
                 <p>Email: {company.companyMail}</p>
+                <p>starting at ${company.companyWage}/h</p>
               </>
             )}
             <p>Description: {company.companyDescription}</p>
