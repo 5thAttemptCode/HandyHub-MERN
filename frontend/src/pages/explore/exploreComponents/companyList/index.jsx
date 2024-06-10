@@ -15,7 +15,7 @@ export default function CompanyList({ companies, loading, error }) {
     <ul className='company-ul'>
       {companies.map((company, index) => (
         <li key={`${company.companyMail}-${index}`}>
-          <CompanyContainer to={`${company.companyName}`}>
+          <CompanyContainer to={`${company.companyName}`} company={company}>
             <img src={`http://localhost:3001/uploads/${company.companyImage}`} alt="company image" />
             <h3>{company.companyName}</h3>
             {user && (
