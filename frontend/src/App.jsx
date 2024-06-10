@@ -45,24 +45,23 @@ export default function App() {
           <Route path="/handy-hubber-profile" element={<HandyHubberProfileRoute />} />
           <Route path="/register-form" element={<HandyHubberRegisterRoute />} />
 
-          <Route path="/mason" element={<Mason />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
-          <Route path="/electrician" element={<Electrician />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
-          <Route path="/painter" element={<Painter />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
-          <Route path="/carpenter" element={<Carpenter />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
-          <Route path="/roofer" element={<Roofer />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
-          <Route path="/plumber" element={<Plumber />}>
-            <Route path=":companyName" element={<CompanyDetails />} />
-          </Route>
+          <Route path="/mason" element={<Mason />} />
+          <Route path="/mason/:companyName" element={<CompanyDetails />} />
+
+          <Route path="/electrician" element={<Electrician />} />
+          <Route path="/electrician/:companyName" element={<CompanyDetails />} />
+
+          <Route path="/painter" element={<Painter />} />
+          <Route path="/painter/:companyName" element={<CompanyDetails />} />
+
+          <Route path="/carpenter" element={<Carpenter />} />
+          <Route path="/carpenter/:companyName" element={<CompanyDetails />} />
+
+          <Route path="/roofer" element={<Roofer />} />
+          <Route path="/roofer/:companyName" element={<CompanyDetails />} />
+
+          <Route path="/plumber" element={<Plumber />} />
+          <Route path="/plumber/:companyName" element={<CompanyDetails />} />
 
           <Route path="/guide-foryour-home-project-linkOne" element={<LinkOne />} />
           <Route path="/guide-foryour-home-project-linkTwo" element={<LinkTwo />} />
