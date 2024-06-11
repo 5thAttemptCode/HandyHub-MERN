@@ -1,6 +1,9 @@
 import React from 'react'
 import './style.css'
 import { useLocation, useParams } from 'react-router-dom'
+import ModalButton from '@/components/modal/components/modalButton'
+import { ShareNetwork } from '@phosphor-icons/react'
+import ShareModal from './components/shareModal'
 
 
 export default function CompanyDetails() {
@@ -24,6 +27,10 @@ export default function CompanyDetails() {
       ) : (
         <p>Company details not available.</p>
       )}
+      <ModalButton>
+        <ShareNetwork size={20} />
+      </ModalButton>
+      <ShareModal />
     </section>
   )
 }

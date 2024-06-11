@@ -1,0 +1,10 @@
+.company-details{
+
+    > .modal-button{
+        background: none;
+
+        &:hover{
+            background: none;
+        }
+    }
+}
