@@ -24,6 +24,7 @@ import { ModalProvider } from './context/modalContext'
 import HandyModal from './pages/handyHubberAuth/components/modal'
 import HubberStories from './pages/handyHubberAuth/components/hubberGrid/hubberStories'
 import CompanyDetails from './pages/explore/exploreComponents/companyDetails'
+import SearchResults from './pages/searchResults'
 
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<UserLoginRoute />} />
           <Route path="/become-a-handyhubber" element={<HandyHubberLoginRoute />} />
+          <Route path="/searchresults/:tag" element={<SearchResults />} />
 
           <Route path="/user-profile" element={<UserProfileRoute />} />
           <Route path="/handy-hubber-profile" element={<HandyHubberProfileRoute />} />
