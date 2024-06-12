@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 import { IndustryData } from '../data'
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import useClickOutside from '@/utliz/useClickOutside'
@@ -7,8 +8,8 @@ import useClickOutside from '@/utliz/useClickOutside'
 
 export default function SearchBar() {
 
-  const [inputValue, setInputValue] = useState("")
-  const [searchResults, setSearchResults] = useState([])
+  const [ inputValue, setInputValue ] = useState("")
+  const [ searchResults, setSearchResults ] = useState([])
   const searchRef = useRef(null)
 
   // Toggle function to clear search results
@@ -56,7 +57,9 @@ export default function SearchBar() {
         <ul>
           {searchResults.map((tag, index) => (
             <li key={index}>
-              {tag}
+              <Link to={`/searchresults/${tag}`} onClick={clearSearchResults}>
+                {tag}
+              </Link>
             </li>
           ))}
         </ul>
