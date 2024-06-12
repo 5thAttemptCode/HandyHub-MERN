@@ -38,10 +38,16 @@
         
         li{
             color: black;
+            width: 100%;
 
             &:hover{
                 background: rgb(237, 235, 235);
                 cursor: pointer;
+            }
+
+            > a{
+                display: inline-block;
+                width: 100%;
             }
         }
     }
